@@ -1,0 +1,287 @@
+body {
+    background-color: #E5E5E5;
+}
+
+.conteiner-login {
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+
+    position: absolute;
+    height: 176.71139526367188px;
+    width: 177.12428283691406px;
+    left: 59.70703125px;
+    top: 54.501220703125px;
+    border-radius: 0px;
+
+}
+
+.img2 {
+    position: absolute;
+    height: 629.8428344726562px;
+    width: 526.423828125px;
+    left: -86.423828125px;
+    top: 233.679443359375px;
+    border-radius: 0px;
+
+
+}
+
+.sing-in {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 138.5px auto;
+    background: #017849;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    height: 608px;
+    width: 608px;
+    left: 0px;
+    top: 0px;
+
+
+
+}
+
+.logo1 {
+    position: absolute;
+    width: 321.02px;
+    height: 127.42px;
+    left: 144.5px;
+    top: 77.5px;
+}
+
+.sing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;
+    top: 100px;
+    box-sizing: border-box;
+}
+
+.email,
+.password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.name,
+.email-2, .senha, .senha2 {
+    position: relative;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    width: 120%;
+
+}
+
+.email input,
+.password input {
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #BDBDBD;
+
+
+}
+
+.name input,
+.email-2 input, .senha input, .senha2 input {
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #BDBDBD;
+}
+
+.email label,
+.password label {
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.name label,
+.email-2 label, .senha label, .senha2 label {
+    color: #4F4F4F;
+    margin-bottom: 5px;
+}
+
+.entrar {
+    width: 100%;
+
+}
+
+.entrar button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #017849;
+    border: 1px solid #BDBDBD;
+    color: #FFFFFF;
+    margin-top: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+
+
+}
+
+.entrar button:hover {
+    transform: scale(1.01);
+}
+
+.cadastre-se {
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+
+.cadastre-se p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.subscribe {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 138.5px auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    height: 466px;
+    width: 522px;
+    left: 0px;
+    top: 0px;
+
+
+}
+
+.logo2 {
+    width: 50%;
+    position: absolute;
+    left: 25.5%;
+    right: 32.54%;
+    top: 9.23%;
+    bottom: 82.13%;
+
+}
+
+.paragraph {
+    position: absolute;
+    top: 24.4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+
+
+}
+
+.text1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #00995D;
+}
+
+.text2 {
+    width: 100%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+    align-items: center;
+    color: #00995D;
+    text-align: center;
+
+}
+
+.prosseguir,.prosseguir2 {
+    position: absolute;
+    width: 1.9%;
+    top: 82%;
+    left: 46%;
+    bottom: 4%;
+    cursor: pointer;
+
+}
+
+.prosseguir:hover {
+    transform: scale(1.1);
+}
+
+.prosseguir button, .prosseguir2 button {
+    border: none
+}
+
+.continue {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 138.5px auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    height: 534px;
+    width: 522px;
+    left: 0px;
+    top: 0px;
+}
+
+.required {
+    position: relative;
+    right: 23.5%;
+    bottom: 25.28%;
+}
+
+.text3 {
+
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #6F6F6E;
+
+}
+.text3 span{
+    color:#EB5757
+}
