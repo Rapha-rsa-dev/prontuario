@@ -15,24 +15,32 @@
 </head>
 
 <body>
+    
+        <img class="img1" src="../img/background.svg" alt="logo de fundo">
+        <div class="fundoModal" id="modal">
+        <div class="modal" id="editModal">
+            
+        </div>
+        </div>
+  
 
     <div class="conteiner-login" id="conteinerLogin">
 
-        <div class="logo-fundo">
-            <img class="img1" src="../img/Vector1.svg" alt="logo de fundo">
-            <img class="img2" src="../img/Vector2.svg" alt="logo de fundo grande">
-        </div>
+        <img class="img1" src="../img/background.svg" alt="logo de fundo">
 
         <div class="sing-in" id="singIn">
             <img src="../img/Logo.svg" alt="logo" class="logo1">
-            <form method="post" class="sing">
+
+
+            <form method="post" class="sing" id="form">
                 <div class="email">
                     <label for="email">Login</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    <input type="email" id="email" placeholder="Digite seu e-mail" >
                 </div>
                 <div class="password">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                    <input type="password" id="senha" placeholder="Digite sua senha" >
+                    <img src="../img/eyeClose.png" id="ocultar" alt="olhos fechados">
                 </div>
                 <div class="entrar">
                     <button type="submit">Entrar</button>
@@ -55,17 +63,17 @@
                 </div>
 
             </div>
-            <form method="post" class="sing">
+            <form method="post" class="sing" id="form1">
                 <div class="name">
                     <label for="Nome">Login</label>
-                    <input type="text" id="nome" placeholder="Digite seu nome" required>
+                    <input type="text" id="name1" placeholder="Digite seu nome">
                 </div>
                 <div class="email-2">
                     <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Digite seu email" required>
+                    <input type="email" id="email1" placeholder="Digite seu email" >
                 </div>
                 <div class="prosseguir">
-                  <button> <img id="prosseguir" src="../img/btn-prosseguir.svg" alt="">
+                  <button type="submit"> <img id="prosseguir" src="../img/btn-prosseguir.svg" alt="">
                 </div></button>
                 
             </form>
@@ -82,29 +90,31 @@
                 </div>
 
             </div>
-            <form method="post" class="sing">
+            <form method="post" class="sing" id="form2">
                 <div class="senha">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                    <input type="password" id="senha2" placeholder="Digite sua senha" >
+                    <img src="../img/eyeClose.png" id="ocultar2" alt="olhos fechados">
                 </div>
                 <div class="senha2">
                     <label for="senha2">Senha</label>
-                    <input type="password" id="senha2" placeholder="Repita sua senha" required>
+                    <input type="password" id="senha3" placeholder="Repita sua senha" >
+                    <img src="../img/eyeClose.png" id="ocultar3" alt="olhos fechados">
                 </div>
                 <div class="required" id="required">
-                   <div class="text3">
+                   <div class="text3" id="requisito1">
                     <span>*</span><p>Precisa no minimo 8 digitos</p>
                     </div>
-                    <div class="text3">
+                    <div class="text3" id="requisito2">
                         <span>*</span><p>Precisa conter um caractere especial */+.</p>
                         </div>
-                        <div class="text3">
+                        <div class="text3" id="requisito3">
                             <span>*</span><p>Precisa conter uma letra MAIÚSCULA</p>
                             </div>
                             
                 </div>
                 <div class="prosseguir2">
-                  <button> <img id="prosseguir2" src="../img/btn-prosseguir.svg" alt="">
+                  <button type="submit"> <img id="prosseguir2" src="../img/btn-prosseguir.svg" alt="">
                 </div></button>
                 
             </form>
