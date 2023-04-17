@@ -1,4 +1,4 @@
-const formulario = document.querySelector('#form')
+const formulario = document.querySelector('.sing')
 const cadastreSe = document.querySelector('#singIn');
 const telaLogin = document.querySelector('#conteinerLogin');
 const subscrever = document.querySelector('#subscribe');
@@ -78,6 +78,38 @@ let validarSenha = function validarSenha(senha) {
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const formData = new FormData(formulario);
+  const data = Object.fromEntries(formData);
+
+  fetch("http://localhost:3000/login", {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+     
+       
+    },
+    body: JSON.stringify(data)
+  }).then(Response => Response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error())
+console.log(formData)
+
+// let listaUser = JSON.parse('https:/localhost:3000/log' || '[]' )
+
+const addLog = async () => {
+  const login = {
+    
+    "Email": document.getElementById('email').value,
+    "Senhar": document.getElementById('senha').value,
+    
+  }
+  addLog = JSON.parse(login || '[]')
+
+  await formData(login)
+}
+
+
    
   if (emailInput.value === "" || !isValidEmail(emailInput.value)) {
     modal.style.display = 'block';
@@ -130,7 +162,7 @@ formCadastro.addEventListener('submit', (e) => {
   function next() {
     subscrever.style.display = 'none';
     continueCadastro.style.display = 'flex';
-    // formCadastro.submit
+    formCadastro.submit
   }
   
     
