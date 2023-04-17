@@ -15,11 +15,11 @@ mostrarSenhaBtn.addEventListener('click', () => {
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
     mostrarSenhaBtn.textContent = 'Ocultar';
-    mostrarSenhaBtn.setAttribute("src", "/src/assets/img/eyeClose.png")
+    mostrarSenhaBtn.setAttribute("src", "/src/assets/img/eyeVisivel.png")
   } else {
     passwordInput.type = 'password';
     mostrarSenhaBtn.textContent = 'Mostrar';
-    mostrarSenhaBtn.setAttribute("src", "/src/assets/img/eyeVisivel.png")
+    mostrarSenhaBtn.setAttribute("src", "/src/assets/img/eyeClose.png")
   }
 });
 
@@ -78,8 +78,7 @@ let validarSenha = function validarSenha(senha) {
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
 
-
-
+   
   if (emailInput.value === "" || !isValidEmail(emailInput.value)) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Digite um e-mail valido.</p>'
@@ -106,6 +105,8 @@ const emailInput1 = document.querySelector('#email1');
 
 formCadastro.addEventListener('submit', (e) => {
   e.preventDefault();
+ 
+ 
 
   if (nameInput.value === "") {
     modal.style.display = 'block';
@@ -129,8 +130,11 @@ formCadastro.addEventListener('submit', (e) => {
   function next() {
     subscrever.style.display = 'none';
     continueCadastro.style.display = 'flex';
-    // formCadastro.submit()
+    // formCadastro.submit
   }
+  
+    
+  
 
 })
 
@@ -195,6 +199,7 @@ mostrarSenhaBtn3.addEventListener('click', () => {
 
 formEnviar.addEventListener('submit', (e) => {
   e.preventDefault();
+
 
   if (!validarSenha(passwordInput2.value, 8)) {
     modal.style.display = 'block';
