@@ -15,11 +15,11 @@ mostrarSenhaBtn.addEventListener('click', () => {
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
     mostrarSenhaBtn.textContent = 'Ocultar';
-    mostrarSenhaBtn.setAttribute("src", "/src/assets/img/eyeVisivel.png")
+    // mostrarSenhaBtn.setAttribute("src", '/src/assets/img/eyeVisivel.png')
   } else {
     passwordInput.type = 'password';
     mostrarSenhaBtn.textContent = 'Mostrar';
-    mostrarSenhaBtn.setAttribute("src", "/src/assets/img/eyeClose.png")
+    // mostrarSenhaBtn.setAttribute("src", '/src/assets/img/eyeClose.png')
   }
 });
 
@@ -178,22 +178,22 @@ mostrarSenhaBtn2.addEventListener('click', () => {
   if (passwordInput2.type === 'password') {
     passwordInput2.type = 'text';
     mostrarSenhaBtn2.textContent = 'Ocultar';
-    mostrarSenhaBtn2.setAttribute("src", "/src/assets/img/eyeVisivel.png")
+    // mostrarSenhaBtn2.setAttribute("src", "/src/assets/img/eyeVisivel.png")
   } else {
     passwordInput2.type = 'password';
     mostrarSenhaBtn2.textContent = 'Mostrar';
-    mostrarSenhaBtn2.setAttribute("src", "/src/assets/img/eyeClose.png")
+    //mostrarSenhaBtn2.setAttribute("src", "/src/assets/img/eyeClose.png")
   }
 });
 mostrarSenhaBtn3.addEventListener('click', () => {
   if (passwordInput3.type === 'password') {
     passwordInput3.type = 'text';
     mostrarSenhaBtn3.textContent = 'Ocultar';
-    mostrarSenhaBtn3.setAttribute("src", "/src/assets/img/eyeVisivel.png")
+   // mostrarSenhaBtn3.setAttribute("src", "/src/assets/img/eyeVisivel.png")
   } else {
     passwordInput3.type = 'password';
     mostrarSenhaBtn3.textContent = 'Mostrar';
-    mostrarSenhaBtn3.setAttribute("src", "/src/assets/img/eyeClose.png")
+   // mostrarSenhaBtn3.setAttribute("src", "/src/assets/img/eyeClose.png")
   }
 });
 
