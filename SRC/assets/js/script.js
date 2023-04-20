@@ -169,8 +169,9 @@ formCadastro.addEventListener('submit', (event) => {
         modal.style.display = 'block';
         modalEdit.innerHTML = '<p> Cadastro realizado com sucesso.</p>'
         modal.addEventListener('click', fecharModal);
+        setTimeout(function() {
       formCadastro.submit()
-      
+        }, 2000)
       }else{
             modal.style.display = 'block';
             modalEdit.innerHTML = '<p> Ops! As senhas precisam ser iguais.</p>'
