@@ -187,14 +187,18 @@ formCadastro.addEventListener('submit', (event) => {
  
     
   
-passwordInput2.addEventListener('input', function () {
+passwordInput2.addEventListener('input', function cor() {
   const senha = passwordInput2.value;
   const temPeloMenos8Caracteres = senha.length >= 8;
+  const temPeloMenosUmCaractere = /["'!@#$%¨&*()_+-=><;:][^0-9]/.test(senha);
   const temPeloMenosUmaMaiuscula = /[A-Z]/.test(senha);
-  const temPeloMenosUmCaractere = /[!@#$%¨&*()_+-=][^0-9][^A-Z][^a-z]{1,}/.test(senha);
-
   
-
+ 
+  if (temPeloMenosUmCaractere) {
+    requisito2.style.color = 'green';
+  } else {
+    requisito2.style.color = 'red';
+  }
 
   if (temPeloMenos8Caracteres) {
     requisito1.style.color = 'green';
@@ -208,11 +212,7 @@ passwordInput2.addEventListener('input', function () {
     requisito3.style.color = 'red';
   }
 
-  if (temPeloMenosUmCaractere) {
-    requisito2.style.color = 'green';
-  } else {
-    requisito2.style.color = 'red';
-  }
+  
 });
 
 
