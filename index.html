@@ -9,118 +9,131 @@
     <link rel="stylesheet" href="./SRC/assets/css/reset.css">
     <link rel="stylesheet" href="./SRC/assets/css/style.css">
     <link rel="stylesheet" href="./SRC/assets/css/responsive.css">
-    <script src="./SRC/assets/js/script.js" defer></script>
-    <script src="./SRC/assets/js/app.js" defer></script>
+    <script type="module"  src="./SRC/assets/js/script.js" defer></script>
+    <script type="module" src="./SRC/assets/js/app.js" defer></script>
 
     <title>Wexer</title>
 </head>
 
 <body>
-    
-        <img class="img1" src="./SRC/assets//img/background.svg" alt="logo de fundo">
-        <div class="fundoModal" id="modal">
+
+    <img class="img1" src="./SRC/assets//img/background.svg" alt="logo de fundo">
+    <div class="fundoModal" id="modal">
         <div class="modal" id="editModal">
-            
-        </div>
-        </div>
-  
 
-    <div class="conteiner-login" id="conteinerLogin">
-
-        <img class="img1" src="./SRC/assets//img/background.svg" alt="logo de fundo">
-
-        <div class="sing-in" id="singIn">
-            <img src="./SRC/assets//img/Logo.svg" alt="logo" class="logo1">
-
-
-            <form  class="sing" id="form" novalidate>
-                <div class="email">
-                    <label for="email">Login</label>
-                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" >
-                </div>
-                <div class="password">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" >
-                    <img src="./SRC/assets//img/eyeVisivel.png" id="ocultar" alt="olho">
-                </div>
-                <div class="entrar">
-                    <button >Entrar</button>
-                </div>
-                <div class="cadastre-se" id="cadastreSe">
-                    <p>Cadastre-se gratuitamente</p>
-                    
-                </div>
-            </form>
-        </div>
-
-        <div class="subscribe"id="subscribe">
-            <img src="./SRC/assets//img/logo2.svg" alt="logo" class="logo2">
-            <div class="paragraph">
-                <div class="text1">
-                <p>Seja bem vindo(a)!</p>
-                </div>
-                <div class="text2">
-                <p>Preencha os campos para se cadastrar</p>
-                </div>
-
-            </div>
-            <form  class="sing" id="form1" novalidate>
-                <div class="name">
-                    <label for="Nome">Login</label>
-                    <input type="text" name="nome" id="name1" placeholder="Digite seu nome">
-                </div>
-                <div class="email-2">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email1" placeholder="Digite seu email" >
-                </div>
-                <div class="prosseguir">
-                  <button> <img id="prosseguir" src="./SRC/assets//img/btn-prosseguir.svg" alt="">
-                </div></button>
-                
-            </form>
-        </div>
-
-        <div class="continue" id="continue">
-            <img src="./SRC/assets//img/logo2.svg" alt="logo" class="logo2">
-            <div class="paragraph">
-                <div class="text1">
-                <p>Seja bem vindo(a)!</p>
-                </div>
-                <div class="text2">
-                <p>Escolha uma senha</p>
-                </div>
-
-            </div>
-            <form  class="sing" id="form2" novalidate>
-                <div class="senha">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha1" id="senha2" placeholder="Digite sua senha" >
-                    <img src="./SRC/assets//img/eyeVisivel.png" id="ocultar2" alt="olho">
-                </div>
-                <div class="senha2">
-                    <label for="senha2">Senha</label>
-                    <input type="password" name="senha3" id="senha3" placeholder="Repita sua senha" >
-                    <img src="./SRC/assets//img/eyeVisivel.png" id="ocultar3" alt="olho ">
-                </div>
-                <div class="required" id="required">
-                   <div class="text3" id="requisito1">
-                    <span>*</span><p>Precisa no minimo 8 digitos</p>
-                    </div>
-                    <div class="text3" id="requisito2">
-                        <span>*</span><p>Precisa conter um caractere especial */+.</p>
-                        </div>
-                        <div class="text3" id="requisito3">
-                            <span>*</span><p>Precisa conter uma letra MAIÚSCULA</p>
-                            </div>
-                            
-                </div>
-                <div class="prosseguir2">
-                  <button > <img id="prosseguir2" src="./SRC/assets//img/btn-prosseguir.svg" alt="">
-                </div></button>
-                
-            </form>
         </div>
     </div>
+
+    <div class="main">
+        <form class="conteiner-login" id="conteinerLogin" novalidate>
+
+            <div class="sing-in" id="singIn">
+                <img src="./SRC/assets//img/Logo.svg" alt="logo" class="logo1">
+
+
+                <section class="sing" id="formEntrar">
+                    <div class="email">
+                        <label for="email">Login</label>
+                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="password">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+                        <img src="./SRC/assets//img/eyeVisivel.png" id="ocultar" alt="olho">
+                    </div>
+                    <div class="entrar">
+                        <button>Entrar</button>
+                    </div>
+                    <div class="cadastre-se" id="cadastreSe">
+                        <p>Cadastre-se gratuitamente</p>
+
+                    </div>
+                </section>
+            </div>
+        </form>
+    </div>
+    <div class="main">
+        <form class="conteiner-login2" id="cradastar" novalidate>
+
+            <div class="subscribe" id="subscribe">
+                <img src="./SRC/assets//img/logo2.svg" alt="logo" class="logo2">
+                <div class="paragraph">
+                    <div class="text1">
+                        <p>Seja bem vindo(a)!</p>
+                    </div>
+                    <div class="text2">
+                        <p>Preencha os campos para se cadastrar</p>
+                    </div>
+
+                </div>
+                <section class="sing" id="form1">
+                    <div class="name">
+                        <label for="Nome">Login</label>
+                        <input type="text" name="nome" id="name1" placeholder="Digite seu nome">
+                    </div>
+                    <div class="email-2">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email1" placeholder="Digite seu email">
+                    </div>
+                    <div class="prosseguir">
+                        <button  > <img id="prosseguir" src="./SRC/assets//img/btn-prosseguir.svg" alt="">
+                        </button>
+                    </div>
+
+                </section>
+            </div>
+
+            <div class="continue" id="continue">
+                <img src="./SRC/assets//img/logo2.svg" alt="logo" class="logo2">
+                <div class="paragraph">
+                    <div class="text1">
+                        <p>Seja bem vindo(a)!</p>
+                    </div>
+                    <div class="text2">
+                        <p>Escolha uma senha</p>
+                    </div>
+
+                </div>
+                <section class="sing" id="form2">
+                    <div class="senha">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha1" id="senha2" placeholder="Digite sua senha">
+                        <img src="./SRC/assets//img/eyeVisivel.png" id="ocultar2" alt="olho">
+                    </div>
+                    <div class="senha2">
+                        <label for="senha2">Senha</label>
+                        <input type="password" name="senha3" id="senha3" placeholder="Repita sua senha">
+                        <img src="./SRC/assets//img/eyeVisivel.png" id="ocultar3" alt="olho ">
+                    </div>
+                    <div class="required" id="required">
+                        <div class="text3" id="requisito1">
+                            <span>*</span>
+                            <p>Precisa no minimo 8 digitos</p>
+                        </div>
+                        <div class="text3" id="requisito2">
+                            <span>*</span>
+                            <p>Precisa conter um caractere especial */+.</p>
+                        </div>
+                        <div class="text3" id="requisito3">
+                            <span>*</span>
+                            <p>Precisa conter uma letra MAIÚSCULA</p>
+                        </div>
+
+                    </div>
+                    <div class="prosseguir2">
+                        <button type="submit"> <img id="prosseguir2" src="./SRC/assets//img/btn-prosseguir.svg" alt="">
+                        </button>
+                    </div>
+
+                </section>
+
+
+
+            </div>
+
+        </form>
+    </div>
+
 
 
 

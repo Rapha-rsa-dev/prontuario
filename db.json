@@ -3,8 +3,8 @@
     {
       "id": 1,
       "title": "json-server",
-      "author": "typicode"
+      "author": "typicode",
+      "senha": "1234"
     }
-
   ]
 }
