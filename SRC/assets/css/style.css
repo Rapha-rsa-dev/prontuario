@@ -272,6 +272,7 @@ body {
     left: 46%;
     bottom: 4%;
     cursor: pointer;
+    z-index: 1;
    
 }
 

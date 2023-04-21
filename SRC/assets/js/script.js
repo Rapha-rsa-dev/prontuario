@@ -1,8 +1,5 @@
-
-
 const formulario = document.querySelector('.conteiner-login');
 const cadastreSe = document.querySelector('#singIn');
-const subscrever = document.querySelector('#subscribe');
 const btncdastreSe = document.querySelector('#cadastreSe');
 const continueCadastro = document.querySelector('#continue');
 const emailInput = document.querySelector('#email');
@@ -11,17 +8,15 @@ const modal = document.querySelector('#modal');
 const modalEdit = document.querySelector('#editModal')
 const mostrarSenhaBtn = document.querySelector('#ocultar');
 
-
 mostrarSenhaBtn.addEventListener('click', () => {
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
-    mostrarSenhaBtn.textContent = 'Ocultar';    
+    mostrarSenhaBtn.textContent = 'Ocultar';
   } else {
     passwordInput.type = 'password';
     mostrarSenhaBtn.textContent = 'Mostrar';
-      }
+  }
 });
-
 
 btncdastreSe.addEventListener("click", cadastro);
 
@@ -30,18 +25,18 @@ function cadastro() {
   subscrever.style.display = 'flex';
 };
 
-
 let fecharModal = function fecharModal() {
   modal.style.display = 'none';
 }
- let isValidPassword = function isValidPassword(passwordInput2,passwordInput3){
-        if(passwordInput2 === passwordInput3){
-          return true;
-        }
-          
-          return false;
-          
-        }
+let isValidPassword = function isValidPassword(passwordInput2, passwordInput3) {
+  if (passwordInput2 === passwordInput3) {
+    
+    return true;
+  }
+
+  return false;
+
+}
 
 let isValidEmail = function isValidEmail(email) {
 
@@ -66,25 +61,24 @@ let validarSenha = function validarSenha(senha) {
 
   for (let i = 0; i < senha.length; i++) {
     let caractere = senha.charAt(i);
-    
+
     if (caractere >= 'A' && caractere <= 'Z') {
       contemMaiuscula = true;
-    
+
     } else if (especiais.test(caractere)) {
       contemEspecial = true;
     }
   }
-  if (!contemMaiuscula  || !contemEspecial) {
+  if (!contemMaiuscula || !contemEspecial) {
     return false;
   }
 
   return true;
 }
 
-
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-   
+
   if (emailInput.value === "" || !isValidEmail(emailInput.value)) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Digite um e-mail valido.</p>'
@@ -98,16 +92,20 @@ formulario.addEventListener("submit", (event) => {
     modal.addEventListener('click', fecharModal);
     return;
   }
-    
 
-  formulario.submit();
+  formCadastro.submit()
+
+
+  window.location.href = '../prontuario.html'
+
 });
+
 
 //tela cadastro
 const formCadastro = document.querySelector('.conteiner-login2')
 const nameInput = document.querySelector('#name1');
 const emailInput1 = document.querySelector('#email1');
-const btnProsseguir = document.querySelector('#prosseguir');
+const btnProsseguir = document.querySelector('.nexxt');
 const passwordInput2 = document.querySelector('#senha2');
 const passwordInput3 = document.querySelector('#senha3');
 const mostrarSenhaBtn2 = document.querySelector('#ocultar2');
@@ -116,13 +114,9 @@ const finalizar = document.querySelector('#prosseguir2');
 const requisito1 = document.querySelector('#requisito1');
 const requisito2 = document.querySelector('#requisito2');
 const requisito3 = document.querySelector('#requisito3');
+const subscrever = document.querySelector('#subscribe');
 
-// export default (formulario,formCadastro,nameInput,emailInput1,passwordInput2);
-
-
-formCadastro.addEventListener('submit', (event) => {
-  event.preventDefault();
- 
+btnProsseguir.addEventListener('click', function seguir() {
   if (nameInput.value === "") {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Digite seu nome.</p>'
@@ -137,63 +131,83 @@ formCadastro.addEventListener('submit', (event) => {
     modal.addEventListener('click', fecharModal);
     return;
   }
-  
-
-   btnProsseguir.addEventListener('click', seguir)
-  function seguir(){
-    subscrever.style.display = 'none';
-    continueCadastro.style.display = 'flex';
-  }
-        
     
+  subscrever.style.display = 'none';
+  continueCadastro.style.display = 'flex';
+})
 
-    
-    formCadastro.addEventListener('submit', event =>{
-      event.preventDefault();
+formCadastro.addEventListener('submit', (event) => {
+  event.preventDefault();
 
       if (!validarSenha(passwordInput2.value, 8)) {
+      modal.style.display = 'block';
+      modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
+      modal.addEventListener('click', fecharModal);
+      return;
+    }
+    if (!validarSenha(passwordInput3.value, 8)) {
+      modal.style.display = 'block';
+      modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>';
+      modal.addEventListener('click', fecharModal);
+      return;
+    }
+    async function listerUser(users) {
+      return fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+    
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(users),
+      });
+    }
+    
+     async function listar() {
+      
+      const nomeUser = nameInput.value;
+      const emailUser = emailInput1.value;
+      const senhaUser = passwordInput2.value;
+      const validatePass = passwordInput3.value;
+      
+      const dadosUser = {
+        nomeUser,
+        emailUser,
+        senhaUser
+    
+      };
+      
+      await listerUser(dadosUser);
+     
+    };
+    finalizar.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (passwordInput2.value !== passwordInput3.value) {
         modal.style.display = 'block';
-        modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>'
+        modalEdit.innerHTML = '<p>As senhas inseridas são diferentes.</p>';
         modal.addEventListener('click', fecharModal);
         return;
       }
-      if (!validarSenha(passwordInput3.value, 8)) {
+      if (listar()) {
         modal.style.display = 'block';
-        modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>'
+        modalEdit.innerHTML = '<p> Cadastro realizado com sucesso.</p>';
         modal.addEventListener('click', fecharModal);
-        return;
+        setTimeout(function () {
+          formCadastro.submit();
+        }, 2000);
+      } else {
+        console.log("Por favor, corrija os erros no formulário.");
       }
-          
-      
-      if (isValidPassword (passwordInput2.value, passwordInput3.value)){
-        modal.style.display = 'block';
-        modalEdit.innerHTML = '<p> Cadastro realizado com sucesso.</p>'
-        modal.addEventListener('click', fecharModal);
-        setTimeout(function() {
-      formCadastro.submit()
-        }, 2000)
-      }else{
-            modal.style.display = 'block';
-            modalEdit.innerHTML = '<p> Ops! As senhas precisam ser iguais.</p>'
-            modal.addEventListener('click', fecharModal);
-            return;
-        }
-         
-      
-    })
+    });
     
 })
 
- 
-    
-  
-passwordInput2.addEventListener('input', function cor() {
+passwordInput2.addEventListener('input', function () {
   const senha = passwordInput2.value;
   const temPeloMenos8Caracteres = senha.length >= 8;
   const temPeloMenosUmCaractere = /["'!@#$%¨&*()_+-=><;:][^0-9]/.test(senha);
   const temPeloMenosUmaMaiuscula = /[A-Z]/.test(senha);
-  
- 
+
   if (temPeloMenosUmCaractere) {
     requisito2.style.color = 'green';
   } else {
@@ -211,31 +225,25 @@ passwordInput2.addEventListener('input', function cor() {
   } else {
     requisito3.style.color = 'red';
   }
-
-  
 });
-
 
 mostrarSenhaBtn2.addEventListener('click', () => {
   if (passwordInput2.type === 'password') {
     passwordInput2.type = 'text';
     mostrarSenhaBtn2.textContent = 'Ocultar';
-    // mostrarSenhaBtn2.setAttribute("src", "/src/assets/img/eyeVisivel.png")
+    
   } else {
     passwordInput2.type = 'password';
     mostrarSenhaBtn2.textContent = 'Mostrar';
-    //mostrarSenhaBtn2.setAttribute("src", "/src/assets/img/eyeClose.png")
-  }
+    
 });
 mostrarSenhaBtn3.addEventListener('click', () => {
   if (passwordInput3.type === 'password') {
     passwordInput3.type = 'text';
     mostrarSenhaBtn3.textContent = 'Ocultar';
-   // mostrarSenhaBtn3.setAttribute("src", "/src/assets/img/eyeVisivel.png")
+    
   } else {
     passwordInput3.type = 'password';
     mostrarSenhaBtn3.textContent = 'Mostrar';
-   // mostrarSenhaBtn3.setAttribute("src", "/src/assets/img/eyeClose.png")
-  }
+      }
 });
-
