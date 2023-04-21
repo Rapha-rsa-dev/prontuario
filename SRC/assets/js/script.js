@@ -8,6 +8,7 @@ const modal = document.querySelector('#modal');
 const modalEdit = document.querySelector('#editModal')
 const mostrarSenhaBtn = document.querySelector('#ocultar');
 
+
 mostrarSenhaBtn.addEventListener('click', () => {
   if (passwordInput.type === 'password') {
     passwordInput.type = 'text';
@@ -93,13 +94,12 @@ formulario.addEventListener("submit", (event) => {
     return;
   }
 
-  formCadastro.submit()
 
+  formCadastro.submit()
 
   window.location.href = '../prontuario.html'
 
 });
-
 
 //tela cadastro
 const formCadastro = document.querySelector('.conteiner-login2')
@@ -231,18 +231,16 @@ mostrarSenhaBtn2.addEventListener('click', () => {
   if (passwordInput2.type === 'password') {
     passwordInput2.type = 'text';
     mostrarSenhaBtn2.textContent = 'Ocultar';
-    
-  } else {
+      } else {
     passwordInput2.type = 'password';
     mostrarSenhaBtn2.textContent = 'Mostrar';
-    
+    }
 });
 mostrarSenhaBtn3.addEventListener('click', () => {
   if (passwordInput3.type === 'password') {
     passwordInput3.type = 'text';
     mostrarSenhaBtn3.textContent = 'Ocultar';
-    
-  } else {
+     } else {
     passwordInput3.type = 'password';
     mostrarSenhaBtn3.textContent = 'Mostrar';
       }
