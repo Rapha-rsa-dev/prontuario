@@ -97,7 +97,7 @@ formulario.addEventListener("submit", (event) => {
 
   formCadastro.submit()
 
-  window.location.href = 'SRC/assets/html/prontuario.html'
+  window.location.href = 'SRC/assets/html/index.html'
 
 });
 
