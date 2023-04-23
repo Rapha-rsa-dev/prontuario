@@ -31,7 +31,7 @@ let fecharModal = function fecharModal() {
 }
 let isValidPassword = function isValidPassword(passwordInput2, passwordInput3) {
   if (passwordInput2 === passwordInput3) {
-    
+
     return true;
   }
 
@@ -77,7 +77,8 @@ let validarSenha = function validarSenha(senha) {
   return true;
 }
 
-formulario.addEventListener("submit", (event) => {
+
+formulario.addEventListener("submit",  async (event) => {
   event.preventDefault();
 
   if (emailInput.value === "" || !isValidEmail(emailInput.value)) {
@@ -93,11 +94,34 @@ formulario.addEventListener("submit", (event) => {
     modal.addEventListener('click', fecharModal);
     return;
   }
+  const response = await fetch('./db.json') 
+  
+  .then(response => response.json())
+  .then(data => {
+    const email = emailInput.value;
+    const senha = passwordInput.value;
 
+    const user = data.login.find(user => user.emailUser === email && user.senhaUser === senha);
 
-  formCadastro.submit()
-
-  window.location.href = './prontuario.html'
+    if (user) {
+    formulario.style.display = 'none';
+    formCadastro.style.display = 'none';
+    modal.style.display = 'block';
+    modalEdit.innerHTML = '<p> Bem vindo(a)! </p>'
+    modal.addEventListener('click', fecharModal);
+    setTimeout(function () {
+      window.location.href = '/prontuario.html'
+      
+    }, 2300);
+    
+      
+    } else {
+    modal.style.display = 'block';
+    modalEdit.innerHTML = '<p> Ops! Email ou Senha invalidos, tente novamente. </p>'
+    modal.addEventListener('click', fecharModal);
+    
+    }
+})
 
 });
 
@@ -131,7 +155,7 @@ btnProsseguir.addEventListener('click', function seguir() {
     modal.addEventListener('click', fecharModal);
     return;
   }
-    
+
   subscrever.style.display = 'none';
   continueCadastro.style.display = 'flex';
 })
@@ -139,67 +163,67 @@ btnProsseguir.addEventListener('click', function seguir() {
 formCadastro.addEventListener('submit', (event) => {
   event.preventDefault();
 
-      if (!validarSenha(passwordInput2.value, 8)) {
-      modal.style.display = 'block';
-      modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
-      modal.addEventListener('click', fecharModal);
-      return;
-    }
-    if (!validarSenha(passwordInput3.value, 8)) {
-      modal.style.display = 'block';
-      modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>';
-      modal.addEventListener('click', fecharModal);
-      return;
-    }
-    async function listerUser(users) {
-      return fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-    
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(users),
-      });
-    }
-    
-     async function listar() {
-      
-      const nomeUser = nameInput.value;
-      const emailUser = emailInput1.value;
-      const senhaUser = passwordInput2.value;
-      const validatePass = passwordInput3.value;
-      
-      const dadosUser = {
-        nomeUser,
-        emailUser,
-        senhaUser
-    
-      };
-      
-      await listerUser(dadosUser);
-     
-    };
-    finalizar.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (passwordInput2.value !== passwordInput3.value) {
-        modal.style.display = 'block';
-        modalEdit.innerHTML = '<p>As senhas inseridas são diferentes.</p>';
-        modal.addEventListener('click', fecharModal);
-        return;
-      }
-      if (listar()) {
-        modal.style.display = 'block';
-        modalEdit.innerHTML = '<p> Cadastro realizado com sucesso.</p>';
-        modal.addEventListener('click', fecharModal);
-        setTimeout(function () {
-          formCadastro.submit();
-        }, 2000);
-      } else {
-        console.log("Por favor, corrija os erros no formulário.");
-      }
+  if (!validarSenha(passwordInput2.value, 8)) {
+    modal.style.display = 'block';
+    modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
+    modal.addEventListener('click', fecharModal);
+    return;
+  }
+  if (!validarSenha(passwordInput3.value, 8)) {
+    modal.style.display = 'block';
+    modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>';
+    modal.addEventListener('click', fecharModal);
+    return;
+  }
+  async function listerUser(users) {
+    return fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify(users),
     });
-    
+  }
+
+  async function listar() {
+
+    const nomeUser = nameInput.value;
+    const emailUser = emailInput1.value;
+    const senhaUser = passwordInput2.value;
+    const validatePass = passwordInput3.value;
+
+    const dadosUser = {
+      nomeUser,
+      emailUser,
+      senhaUser
+
+    };
+
+    await listerUser(dadosUser);
+
+  };
+  finalizar.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (passwordInput2.value !== passwordInput3.value) {
+      modal.style.display = 'block';
+      modalEdit.innerHTML = '<p>As senhas inseridas são diferentes.</p>';
+      modal.addEventListener('click', fecharModal);
+      return;
+    }
+    if (listar()) {
+      modal.style.display = 'block';
+      modalEdit.innerHTML = '<p> Cadastro realizado com sucesso.</p>';
+      modal.addEventListener('click', fecharModal);
+      setTimeout(function () {
+        formCadastro.submit();
+      }, 2000);
+    } else {
+      console.log("Por favor, corrija os erros no formulário.");
+    }
+  });
+
 })
 
 passwordInput2.addEventListener('input', function () {
@@ -231,17 +255,17 @@ mostrarSenhaBtn2.addEventListener('click', () => {
   if (passwordInput2.type === 'password') {
     passwordInput2.type = 'text';
     mostrarSenhaBtn2.textContent = 'Ocultar';
-      } else {
+  } else {
     passwordInput2.type = 'password';
     mostrarSenhaBtn2.textContent = 'Mostrar';
-    }
+  }
 });
 mostrarSenhaBtn3.addEventListener('click', () => {
   if (passwordInput3.type === 'password') {
     passwordInput3.type = 'text';
     mostrarSenhaBtn3.textContent = 'Ocultar';
-     } else {
+  } else {
     passwordInput3.type = 'password';
     mostrarSenhaBtn3.textContent = 'Mostrar';
-      }
+  }
 });

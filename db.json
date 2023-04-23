@@ -1,10 +1,16 @@
 {
   "login": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "senha": "1234"
+      "nomeUser": "raphael Santos Araujo",
+      "emailUser": "raphael.rsa@hotmail.com",
+      "senhaUser": "!@#RSAdev",
+      "id": 2
+    },
+    {
+      "nomeUser": "halluz luz",
+      "emailUser": "halluz@gmail.com",
+      "senhaUser": "!@#QWEASD",
+      "id": 3
     }
   ]
 }
