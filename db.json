@@ -11,6 +11,12 @@
       "emailUser": "halluz@gmail.com",
       "senhaUser": "!@#QWEASD",
       "id": 3
+    },
+    {
+      "nomeUser": "Joao das Candongas",
+      "emailUser": "joao@gmail.com",
+      "senhaUser": "!@#REWQas",
+      "id": 4
     }
   ]
 }

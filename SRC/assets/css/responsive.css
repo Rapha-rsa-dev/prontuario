@@ -15,538 +15,946 @@
     width: 200px;
   }
 
-  @media (max-width: 820px) {
-
-    .prosseguir,
-    .prosseguir2 {
-      position: absolute;
-      left: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-    #prosseguir,
-    #prosseguir2 {
-      width: 200px;
-    }
-
-    @media (max-width: 720px) {
-
-      .img1 {
-        position: absolute;
-        width: 100%;
-        left: -95px;
-        top: 5px;
-        border-radius: 0px;
-      }
-
-      .logo1 {
-        position: absolute;
-        width: 60%;
-        left: 90px;
-      }
-
-
-      .sing-in,
-      .subscribe,
-      .continue {
-        position: relative;
-        width: 90%;
-
-
-      }
-
-      .prosseguir,
-      .prosseguir2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      @media (max-width: 540px) {
-       .modal{
-        width: 90%;
-       }
-       .modal p{
-        font-size: 14px;
-       }
-       
-        .text3 {
-          font-size: 16px;
-        }
-
-        .required {
-          position: relative;
-         left: -15%;
-          bottom: 27.28%;
-          
-        }
-
-      }
-
-      @media (max-width: 500px) {
-
-
-        .img1 {
-          position: absolute;
-          width: 90%;
-          left: -15px;
-          
-        }
-
-        
-        .logo1 {
-          position: absolute;
-          width: 60%;
-          left: 61px;
-        }
-
-        .logo2 {
-          position: absolute;
-
-          width: 55%;
-          left: 89px;
-
-        }
-
-        .sing-in,
-        .subscribe,
-        .continue {
-          position: relative;
-          width: 90%;
-
-
-        }
-
-        .prosseguir,
-        .prosseguir2 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-
-      }
-
-      @media (max-width: 420px) {
-        .logo2 {
-          position: absolute;
-          width: 70%;
-          left: 40px;
-        }
-
-        .text1 {
-          font-size: 18px;
-        }
-
-        .text2 {
-          font-size: 16px;
-        }
-
-        .text3 {
-          font-size: 14px;
-        }
-
-        .required {
-          position: relative;
-          right: 5%;
-          left: 1%;
-          bottom: 27.28%;
-          width: 280px;
-        }
-        #ocultar{
-          left: 82%;
-          top: 45%;
-         }
-         #ocultar2 {
-          
-          left: 86%;
-          top: 40%;
-          
-          
-      }
-      #ocultar3 {
-          
-          left: 86%;
-          top: 40%;
-         
-      }
-
-
-        .prosseguir,
-        .prosseguir2 {
-          position: absolute;
-          left: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-        }
-
-        #prosseguir,
-        #prosseguir2 {
-          width: 200px;
-        }
-
-      }
-
-      @media (max-width: 414px) {
-        .text3 {
-          font-size: 12px;
-        }
-
-        .required {
-          position: relative;
-          right: 10%;
-          left: -3%;
-          bottom: 27.28%;
-          width: 280px;
-        }
-        .sing-in {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          background: #017849;
-          box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
-          border-radius: 16px;
-          height:608px;
-          width: 308px;
-          left: 0px;
-          top: -0px;
-      
-      
-      
-      }
-
-      }
-
-      @media (max-width: 390px) {
-        .text3 {
-          font-size: 12px;
-        }
-
-        .required {
-          position: relative;
-
-          left: 1%;
-          bottom: 27.28%;
-          width: 280px;
-        }
-        #ocultar{
-          left: 83%;
-          top: 45%;
-         }
-      
-
-      }
-
-      @media (max-width: 375px) {
-
-
-        .img1 {
-          position: absolute;
-          width: 100%;
-          left: -5px;
-          
-        }
-
-      
-        .logo1 {
-          position: absolute;
-          width: 60%;
-          left: 50px;
-        }
-
-        .logo2 {
-          position: absolute;
-          width: 70%;
-          left: 40px;
-        }
-
-        .text1 {
-          font-size: 18px;
-        }
-
-        .text2 {
-          font-size: 16px;
-        }
-
-        .text3 {
-          font-size: 12px;
-        }
-
-        .required {
-          position: relative;
-          right: 0%;
-          left: -2%;
-
-          bottom: 27.28%;
-          width: 260px;
-        }
-
-        .sing-in,
-        .subscribe,
-        .continue {
-          position: relative;
-          width: 90%;
-          
-
-
-        }
-
-        .prosseguir,
-        .prosseguir2 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 10%;
-        }
-
-
-      }
-
-      @media (max-width: 360px) {
-        .text3 {
-          font-size: 12px;
-        }
-
-        .required {
-          position: relative;
-          left: 7%;
-          bottom: 27.28%;
-          width: 280px;
-        }
-
-      }
-
-      @media (max-width: 320px) {
-
-        .img1 {
-          position: absolute;
-          width: 80%;
-          
-        }
-
-        .logo1 {
-          position: absolute;
-          width: 60%;
-          left: 50px;
-        }
-
-        .logo2 {
-          position: absolute;
-          width: 70%;
-          left: 30px;
-        }
-
-        .text1 {
-          font-size: 16px;
-        }
-
-        .text2 {
-          font-size: 14px;
-        }
-
-        .text3 {
-          font-size: 10px;
-        }
-
-        .required {
-          position: relative;
-          right: 4%;
-          bottom: 25.28%;
-          width: 190px;
-        }
-
-        .sing-in,
-        .subscribe,
-        .continue {
-          position: relative;
-          width: 90%;
-          
-
-
-        }
-
-        .prosseguir,
-        .prosseguir2 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-        }
-
-        #prosseguir,
-        #prosseguir2 {
-          width: 150px;
-        }
-        #ocultar{
-          left: 80%;
-          top: 42%;
-         }
-         #ocultar2 {
-          
-          left: 82%;
-          top: 40%;
-          
-          
-      }
-      #ocultar3 {
-          
-          left: 82%;
-          top: 40%;
-         
-      }
-
-
-      }
-      @media (max-width: 280px) {
-        .text3 {
-          font-size: 10px;
-        }
-
-        .required {
-          position: relative;
-         left: 0%;
-          bottom: 25.28%;
-          
-        }
-        #ocultar{
-          left: 80%;
-          top: 42%;
-         }
-         #ocultar2 {
-          
-          left: 82%;
-          top: 40%;
-          
-          
-      }
-      #ocultar3 {
-          
-          left: 82%;
-          top: 40%;
-         
-      }
-
-      }
-
-
-      @media (max-width: 250px) {
-
-        .img1 {
-          position: absolute;
-          width: 90%;
-          
-        }
-
-        
-        .logo1 {
-          position: absolute;
-          width: 60%;
-          left: 30px;
-        }
-
-        .logo2 {
-          position: absolute;
-          width: 70%;
-          left: 30px;
-        }
-
-        .text1 {
-          font-size: 16px;
-        }
-
-        .text2 {
-          font-size: 14px;
-        }
-
-        .text3 {
-          font-size: 10px;
-        }
-
-        .required {
-          position: relative;
-          right: 7%;
-          bottom: 25.28%;
-          width: 200px;
-        }
-
-        .sing-in,
-        .subscribe,
-        .continue {
-          position: relative;
-          width: 90%;
-          
-
-
-        }
-
-        .prosseguir,
-        .prosseguir2 {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-        }
-
-        #prosseguir,
-        #prosseguir2 {
-          width: 130px;
-        }
-
-        .text1,
-        .text2 {
-          font-size: 14PX;
-        }
-
-      }
-    }
+  .rowcadastro {
+    width: 75%;
+    gap: 25%
   }
 
-  @media (max-width: 150px) {
+  .newPacientAdd {
+    width: 200px;
+  }
 
-    .prosseguir,
-    .prosseguir2 {
-      position: absolute;
-      left: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 280px;
+  }
+}
 
-    }
+@media (max-width: 1100px) {
 
-    #prosseguir,
-    #prosseguir2 {
-      width: 100px;
-    }
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 240px;
+  }
+}
 
-    .logo2 {
-      position: absolute;
-      width: 70%;
-      left: 18px;
-    }
+@media(max-width: 970px) {
 
-    .text1 {
-      font-size: 12px;
-    }
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 240px;
+  }
+}
 
-    .text2 {
-      font-size: 10px;
-    }
+@media(max-width: 920px) {
 
-    .text3 {
-      font-size: 10px;
-    }
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 200px;
+  }
+}
 
-    .required {
-      position: relative;
-      right: 7%;
-      bottom: 25.28%;
-      width: 180px;
-    }
+
+
+@media (max-width: 820px) {
+
+  .prosseguir,
+  .prosseguir2 {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #prosseguir,
+  #prosseguir2 {
+    width: 200px;
+  }
+
+  .rowcadastro {
+    width: 60%;
+    gap: 15%
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 200px;
+  }
+}
+
+@media(max-width: 780px) {
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 180px;
+  }
+
+  .send {
+    width: 80%;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .img1 {
+    position: absolute;
+    width: 100%;
+    left: -95px;
+    top: 5px;
+    border-radius: 0px;
+  }
+
+  .logo1 {
+    position: absolute;
+    width: 60%;
+    left: 90px;
+  }
+
+
+  .sing-in,
+  .subscribe,
+  .continue {
+    position: relative;
+    width: 90%;
+
+
+  }
+
+  .prosseguir,
+  .prosseguir2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 45%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 160px;
+  }
+
+  .send {
+    width: 80%;
+  }
+}
+
+@media(max-width: 670px) {
+  .send {
+    width: 80%;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 140px;
+  }
+}
+
+@media(max-width: 670px) {
+  .send {
+    width: 70%;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 130px;
+  }
+
+
+}
+
+@media(max-width: 590px) {
+  .send {
+    width: 70%;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 130px;
+  }
+}
+
+@media (max-width: 540px) {
+  .modal {
+    width: 90%;
+  }
+
+  .modal p {
+    font-size: 14px;
+  }
+
+  .text3 {
+    font-size: 16px;
+  }
+
+  .required {
+    position: relative;
+    left: -15%;
+    bottom: 27.28%;
+
+  }
+
+  .rowcadastro {
+    width: 55%;
+    gap: 15%
+  }
+
+  .newPacientAdd {
+    width: 150px;
+  }
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 45%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 300px;
+  }
+
+  .send {
+    width: 60%;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 120px;
+  }
+
+
+}
+
+@media (max-width: 500px) {
+
+
+  .img1 {
+    position: absolute;
+    width: 90%;
+    left: -15px;
+
+  }
+
+
+  .logo1 {
+    position: absolute;
+    width: 60%;
+    left: 61px;
+  }
+
+  .logo2 {
+    position: absolute;
+
+    width: 55%;
+    left: 89px;
+
+  }
+
+  .sing-in,
+  .subscribe,
+  .continue {
+    position: relative;
+    width: 90%;
+
+
+  }
+
+  .prosseguir,
+  .prosseguir2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 45%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 300px;
+  }
+
+  .modal-paciente {
+    max-height: 1200px;
+    height: 1300px;
+
+  }
+
+  .one,
+  .two,
+  .three,
+  .for {
+
+    flex-direction: column;
+
+
+  }
+
+  .one option,
+  .two option,
+  select,
+  .three option,
+  .for option,
+  select {
+    width: 250px;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 250px;
+  }
+
+  .send {
+    width: 100%;
+    flex-direction: column;
+    bottom: 2%;
+  }
+
+  .btnsend {
+    width: 80%;
+  }
+
+  .paceiteTitulo {
+    position: relative;
+    top: 2%
+  }
+
+
+}
+
+@media (max-width: 420px) {
+  .logo2 {
+    position: absolute;
+    width: 70%;
+    left: 40px;
+  }
+
+  .text1 {
+    font-size: 18px;
+  }
+
+  .text2 {
+    font-size: 16px;
+  }
+
+  .text3 {
+    font-size: 14px;
+  }
+
+  .required {
+    position: relative;
+    right: 5%;
+    left: 1%;
+    bottom: 27.28%;
+    width: 280px;
+  }
+
+  #ocultar {
+    left: 82%;
+    top: 45%;
+  }
+
+  #ocultar2 {
+
+    left: 86%;
+    top: 40%;
+
+
+  }
+
+  #ocultar3 {
+
+    left: 86%;
+    top: 40%;
+
+  }
+
+
+  .prosseguir,
+  .prosseguir2 {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #prosseguir,
+  #prosseguir2 {
+    width: 200px;
+  }
+
+
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 45%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 300px;
+  }
+}
+
+@media (max-width: 414px) {
+  .text3 {
+    font-size: 12px;
+  }
+
+  .required {
+    position: relative;
+    right: 10%;
+    left: -3%;
+    bottom: 27.28%;
+    width: 280px;
+  }
+
+  .sing-in {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #017849;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    height: 608px;
+    width: 308px;
+    left: 0px;
+    top: -0px;
+
+
+
+  }
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 65%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 250px;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .text3 {
+    font-size: 12px;
+  }
+
+  .required {
+    position: relative;
+
+    left: 1%;
+    bottom: 27.28%;
+    width: 280px;
+  }
+
+  #ocultar {
+    left: 83%;
+    top: 45%;
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 250px;
+  }
+
+
+}
+
+@media (max-width: 375px) {
+
+
+  .img1 {
+    position: absolute;
+    width: 100%;
+    left: -5px;
+
+  }
+
+
+  .logo1 {
+    position: absolute;
+    width: 60%;
+    left: 50px;
+  }
+
+  .logo2 {
+    position: absolute;
+    width: 70%;
+    left: 40px;
+  }
+
+  .text1 {
+    font-size: 18px;
+  }
+
+  .text2 {
+    font-size: 16px;
+  }
+
+  .text3 {
+    font-size: 12px;
+  }
+
+  .required {
+    position: relative;
+    right: 0%;
+    left: -2%;
+
+    bottom: 27.28%;
+    width: 260px;
+  }
+
+  .sing-in,
+  .subscribe,
+  .continue {
+    position: relative;
+    width: 90%;
+
+  }
+
+  .prosseguir,
+  .prosseguir2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 250px;
+  }
+
+
+}
+
+@media (max-width: 360px) {
+  .text3 {
+    font-size: 12px;
+  }
+
+  .required {
+    position: relative;
+    left: 7%;
+    bottom: 27.28%;
+    width: 280px;
+  }
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 75%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 250px;
+  }
+
+}
+
+@media (max-width: 320px) {
+
+  .img1 {
+    position: absolute;
+    width: 80%;
+
+  }
+
+  .logo1 {
+    position: absolute;
+    width: 60%;
+    left: 50px;
+  }
+
+  .logo2 {
+    position: absolute;
+    width: 70%;
+    left: 30px;
+  }
+
+  .text1 {
+    font-size: 16px;
+  }
+
+  .text2 {
+    font-size: 14px;
+  }
+
+  .text3 {
+    font-size: 10px;
+  }
+
+  .required {
+    position: relative;
+    right: 4%;
+    bottom: 25.28%;
+    width: 190px;
+  }
+
+  .sing-in,
+  .subscribe,
+  .continue {
+    position: relative;
+    width: 90%;
+
+
+
+  }
+
+  .prosseguir,
+  .prosseguir2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #prosseguir,
+  #prosseguir2 {
+    width: 150px;
+  }
+
+  #ocultar {
+    left: 80%;
+    top: 42%;
+  }
+
+  #ocultar2 {
+
+    left: 82%;
+    top: 40%;
+
+
+  }
+
+  #ocultar3 {
+
+    left: 82%;
+    top: 40%;
+
+  }
+
+  .rowcadastro {
+    flex-direction: column;
+    width: 85%;
+    gap: 20px;
+
+  }
+
+  .newPacientAdd {
+    width: 200px;
+  }
+
+  .search {
+    width: 200px;
+  }
+
+  .filterUser {
+    width: 100px;
+  }
+
+
+}
+
+@media (max-width: 280px) {
+  .text3 {
+    font-size: 10px;
+  }
+
+  .required {
+    position: relative;
+    left: 0%;
+    bottom: 25.28%;
+
+  }
+
+  #ocultar {
+    left: 80%;
+    top: 42%;
+  }
+
+  #ocultar2 {
+
+    left: 82%;
+    top: 40%;
+
+
+  }
+
+  #ocultar3 {
+
+    left: 82%;
+    top: 40%;
+
+  }
+
+  .modal-paciente {
+    max-height: 1200px;
+    height: 1300px;
+
+  }
+
+  .one,
+  .two,
+  .three,
+  .for {
+
+    flex-direction: column;
+
+
+  }
+
+  .one option,
+  .two option,
+  select,
+  .three option,
+  .for option,
+  select {
+    width: 250px;
+  }
+
+  .one input,
+  .two input,
+  select,
+  .three input,
+  .for input,
+  select {
+    width: 200px;
+  }
+
+  .send {
+    width: 100%;
+    flex-direction: column;
+    bottom: 2.5%;
+  }
+
+  .btnsend {
+    width: 80%;
+  }
+
+  .paceiteTitulo {
+    position: relative;
+    top: 2%
+  }
+
+
+}
+
+
+@media (max-width: 250px) {
+
+  .img1 {
+    position: absolute;
+    width: 90%;
+
+  }
+
+
+  .logo1 {
+    position: absolute;
+    width: 60%;
+    left: 30px;
+  }
+
+  .logo2 {
+    position: absolute;
+    width: 70%;
+    left: 30px;
+  }
+
+  .text1 {
+    font-size: 16px;
+  }
+
+  .text2 {
+    font-size: 14px;
+  }
+
+  .text3 {
+    font-size: 10px;
+  }
+
+  .required {
+    position: relative;
+    right: 7%;
+    bottom: 25.28%;
+    width: 200px;
+  }
+
+  .sing-in,
+  .subscribe,
+  .continue {
+    position: relative;
+    width: 90%;
+
+
+
+  }
+
+  .prosseguir,
+  .prosseguir2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #prosseguir,
+  #prosseguir2 {
+    width: 130px;
+  }
+
+  .text1,
+  .text2 {
+    font-size: 14PX;
+  }
+
+}
+
+
+
+@media (max-width: 150px) {
+
+  .prosseguir,
+  .prosseguir2 {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #prosseguir,
+  #prosseguir2 {
+    width: 100px;
+  }
+
+  .logo2 {
+    position: absolute;
+    width: 70%;
+    left: 18px;
+  }
+
+  .text1 {
+    font-size: 12px;
+  }
+
+  .text2 {
+    font-size: 10px;
+  }
+
+  .text3 {
+    font-size: 10px;
+  }
+
+  .required {
+    position: relative;
+    right: 7%;
+    bottom: 25.28%;
+    width: 180px;
   }
 }

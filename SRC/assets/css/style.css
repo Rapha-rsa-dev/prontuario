@@ -1,17 +1,19 @@
 body {
     background-color: rgb(242, 242, 242);
-    
+
 }
-.fundoModal{
-    display:none;
+
+.fundoModal {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0 ,0, 0.655);
+    background-color: rgba(0, 0, 0, 0.655);
     z-index: 9998;
 
 }
-.modal{
+
+.modal {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,9 +28,10 @@ body {
     transform: translate(-50%, -50%);
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.707);
     border: 1px solid #BDBDBD;
-    
+
 }
-.modal p{
+
+.modal p {
     margin: 20px 20px;
     text-align: center;
     font-family: Montserrat;
@@ -38,6 +41,7 @@ body {
     line-height: 22px;
     color: #00995D;
 }
+
 .conteiner-login {
     position: absolute;
     width: 100%;
@@ -47,9 +51,10 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
+
 }
-.conteiner-login2{
+
+.conteiner-login2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,8 +70,8 @@ body {
     height: 100vh;
     width: 526.42px;
     left: -50px;
-    
-  
+
+
 
 }
 
@@ -116,7 +121,9 @@ body {
 }
 
 .name,
-.email-2, .senha, .senha2 {
+.email-2,
+.senha,
+.senha2 {
     position: relative;
     bottom: 20%;
     display: flex;
@@ -137,7 +144,9 @@ body {
 }
 
 .name input,
-.email-2 input, .senha input, .senha2 input {
+.email-2 input,
+.senha input,
+.senha2 input {
     padding: 14px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -151,7 +160,9 @@ body {
 }
 
 .name label,
-.email-2 label, .senha label, .senha2 label {
+.email-2 label,
+.senha label,
+.senha2 label {
     color: #4F4F4F;
     margin-bottom: 5px;
 }
@@ -265,7 +276,8 @@ body {
 
 }
 
-.prosseguir,.prosseguir2 {
+.prosseguir,
+.prosseguir2 {
     position: absolute;
     width: 1.9%;
     top: 82%;
@@ -273,14 +285,16 @@ body {
     bottom: 4%;
     cursor: pointer;
     z-index: 1;
-   
+
 }
 
-.prosseguir:hover, .prosseguir2:hover {
+.prosseguir:hover,
+.prosseguir2:hover {
     transform: scale(1.1);
 }
 
-.prosseguir button, .prosseguir2 button {
+.prosseguir button,
+.prosseguir2 button {
     border: none;
     border-radius: 8px;
     color: none;
@@ -322,16 +336,19 @@ body {
     color: #6F6F6E;
 
 }
-.text3 span{
-    color:#EB5757
+
+.text3 span {
+    color: #EB5757
 }
-#ocultar{
+
+#ocultar {
     position: absolute;
     left: 91%;
     top: 45%;
     width: 25px;
     cursor: pointer;
 }
+
 #ocultar2 {
     position: absolute;
     left: 91%;
@@ -339,10 +356,526 @@ body {
     width: 25px;
     cursor: pointer;
 }
+
 #ocultar3 {
     position: absolute;
     left: 91%;
     top: 40%;
     width: 25px;
     cursor: pointer;
+}
+
+.main-conteiner {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: block;
+
+
+}
+
+.cabecalho {
+    position: relative;
+    background-color: #FFFFFF;
+    height: 80.75px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+
+
+
+}
+
+.header header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.logoCabecalho {
+    width: 80px;
+    height: 80.75px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.logoCabecalho img {
+    Width: 28.85px;
+    Height: 44.33px;
+}
+
+.contentHeader {
+    position: relative;
+    height: 80.75px;
+    width: 95%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #017849;
+}
+
+.userContent {
+    position: absolute;
+    right: 48px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userName {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #017849;
+}
+
+#arrow-down {
+    cursor: pointer;
+}
+
+.contentTable {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.painelTable {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    background-color: #FFFFFF;
+    max-width: 100%;
+    width: 85%;
+    max-height: 100vh;
+    height: 70vh;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.textPaciente {
+    position: absolute;
+    left: 7.5%;
+    top: 3%;
+    font-family: Comfortaa, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #4F4F4F;
+}
+
+.rowcadastro {
+    position: relative;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 45%
+}
+
+.buttonNewPacient {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 100%;
+    width: 197px;
+
+}
+
+.newPacientAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    height: 52px;
+    padding: 14px, 20px, 14px, 20px;
+    border-radius: 30px;
+    background-color: #017849;
+    border: none;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 379px;
+
+}
+
+.search input {
+    width: 100%;
+    height: 48px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 24px 0px 0px 24px;
+    padding-left: 20px;
+}
+
+.search input::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #828282;
+}
+
+.filterUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 125px;
+    height: 48px;
+    padding: 14px, 20px, 14px, 20px;
+    border-radius: 0px 30px 30px 0px;
+    background-color: #017849;
+    border: none;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.filterUser:hover,
+.buttonNewPacient:hover {
+    transform: scale(1.02);
+}
+
+.containertabela {
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    width: 94%;
+
+}
+
+.tableContent {
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+
+.dadostabela {
+    display: none;
+    width: 100%;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.codigo {
+    border: 1px solid #E0E0E0;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #2F80ED;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.nometabela {
+    border: 1px solid #E0E0E0;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #2F80ED;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.CPF {
+    border: 1px solid #E0E0E0;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #2F80ED;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.actions {
+    border: 1px solid #E0E0E0;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: #2F80ED;
+}
+
+#codigoUser,
+#nomeUser,
+#cpfUser {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4F4F4F;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #E0E0E0;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #2F80ED;
+
+}
+
+#clipboard {
+    width: 32px;
+    height: 24px;
+    color: #017849;
+    border: 1px solid #017849;
+    background-color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+#penLine {
+    width: 32px;
+    height: 24px;
+    border: 1px solid #2F80ED;
+    background-color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+#penLine img {
+    width: 12px;
+}
+
+#trash {
+    width: 32px;
+    height: 24px;
+    color: #EB5757;
+    border: 1px solid #EB5757;
+    background-color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+#clipboard:hover,
+#penLine:hover,
+#trash:hover {
+    transform: scale(1.03);
+}
+
+.modal-paciente {
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    width: 80%;
+    max-height: 100vh;
+    height: 560px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    /* z-index: 99; */
+    padding: 50px;
+    border-radius: 16px;
+    gap: 30px;
+    box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.15);
+}
+.paceiteTitulo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.paceiteTitulo i{
+    cursor: pointer;
+}
+.paceiteTitulo i:hover{
+    transform: scale(1.04);
+}
+
+.paceiteTitulotext {
+    position: relative;
+    top: 3%;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #00995D;
+        
+}
+
+.one,
+.two,
+.three,
+.for {
+    position: relative;
+    max-width: 100%;
+    width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.one input,
+.two input,
+select,
+.three input,
+.for input,
+select {
+    max-width: 100%;
+    width: 327px;
+    padding: 13px 16px;
+    background: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+}
+.one label, .two label, .three label, .for label{
+    
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+color: #4F4F4F;
+}
+
+
+.send {
+    position: relative;
+    padding-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid #E0E0E0;
+    width: 110%;
+    gap: 54.5%;
+    font-family: Poppins, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    color: #616161;
+}
+
+.btnsend {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.btnsend p {
+    cursor: pointer;
+    font-family: Comfortaa;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    color: #616161;
+}
+
+.btnsend p:hover {
+    transform: scale(1.04);
+}
+
+.send button {
+
+    width: 147px;
+    height: 48px;
+    border-radius: 8px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #00995D;
+    border: none;
+    cursor: pointer;
+}
+
+.send button:hover {
+    transform: scale(1.03);
 }
