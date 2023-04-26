@@ -92,7 +92,7 @@ let ValidEmail = function ValidEmail(email) {
 };
 
 async function newPacient(paciente) {
-    return fetch('http://localhost:3000/pacientes', {
+    return fetch('https://raphadev.onrender.com/pacientes', {
         method: 'POST',
         headers: {
 
