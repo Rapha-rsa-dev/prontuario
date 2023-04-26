@@ -389,47 +389,53 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 3px;
-    color:#00995D;
+    color: #00995D;
     font-weight: 700;
     font-size: 17px;
     text-align: center;
 }
-.modedit p{
+
+.modedit p {
     position: relative;
     top: 28%
 }
-.confirm{
+
+.confirm {
     position: relative;
     top: 50%;
     width: 100%;
-  
+
 
 }
-.Yes{
+
+.Yes {
     background-color: #00995D;
     width: 40%;
     height: 40px;
     font-size: 18px;
     line-height: 17px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-weight: 600;
     border: none;
     border-radius: 12px;
     cursor: pointer;
 }
-.No{
+
+.No {
     background-color: #990000;
     width: 40%;
     height: 40px;
     font-size: 18px;
     line-height: 17px;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-weight: 600;
     border: none;
     border-radius: 12px;
     cursor: pointer;
 }
-.Yes:hover, .No:hover{
+
+.Yes:hover,
+.No:hover {
     transform: scale(1.04);
 }
 
@@ -958,4 +964,77 @@ select {
 
 .send button:hover {
     transform: scale(1.03);
+}
+
+.modalSucess {
+    position: absolute;
+    background-color: #6f6f6e8f;
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sucessContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    width: 40%;
+    height: 70vh;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0, 0, 14px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.sucessContent p {
+    font-family: Comfortaa, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 128%;
+    text-align: center;
+    color: #00995D;
+    margin-top: 30%;
+
+}
+
+.sucessContent button {
+    background-color: #017849;
+    width: 50%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 128%;
+    text-align: center;
+    position: relative;
+    top: 8%;
+    cursor: pointer;
+    box-shadow: 0, 0, 10px #4F4F4F;
+}
+
+.sucessContent button:hover {
+    transform: scale(1.05);
+}
+
+#logoModal {
+    width: 20%;
+    position: absolute;
+    top: 10%;
 }

@@ -32,6 +32,8 @@ const btnYes = document.querySelector('.Yes');
 const btnNo = document.querySelector('.No');
 const modConfirm = document.querySelector('.mod');
 const userTela = document.querySelector("#userName");
+const modalSucess = document.querySelector('.modalSucess');
+const btnConfirm = document.querySelector('#cadasroConfirm');
 
 const nomeUser = localStorage.getItem('nomeUser');
 if (nomeUser) {
@@ -199,6 +201,73 @@ btnSend.addEventListener('click', (e) => {
             erroNacionalidade.style.color = '#4F4F4F';
           } 
     })
+    naturalidadeInput.addEventListener('input', function () {
+
+        let naturalTamanho = naturalidadeInput.value;
+        let temUmaCidade = naturalTamanho.length >= 5;
+
+        if (temUmaCidade) {
+            erroNaturalidade.innerText = 'Naturalidade';
+            erroNaturalidade.style.color = '#4F4F4F';
+            return;
+        }
+
+    })
+    profissaoInput.addEventListener('input', function () {
+
+        let profissaoTamanho = profissaoInput.value;
+        let temUmJob = profissaoTamanho.length >= 4;
+
+        if (temUmJob) {
+            erroProfissao.innerText = 'Profissão';
+            erroProfissao.style.color = '#4F4F4F';
+            return;
+        }
+
+    })
+    escolaridadeInput.addEventListener('input', function () {
+
+        let nivelescolar = escolaridadeInput.value;
+        let tamanhoEscolar = nivelescolar.length >= 5;
+
+        if (tamanhoEscolar) {
+            erroEscolaridade.innerText = 'Escolaridade';
+            erroEscolaridade.style.color = '#4F4F4F';
+            return;
+        }
+
+    })
+    estadoCivilInput.addEventListener('change', function(){
+        if (estadoCivilInput.checkValidity()) {
+            erroEstadoCivil.innerText = 'Estado Civil';
+            erroEstadoCivil.style.color = '#4F4F4F';
+          } 
+    })
+    maeInput.addEventListener('input', function () {
+
+        let nomeDamae = maeInput.value;
+        let tamanhoMae = nomeDamae.length >= 5;
+
+        if (tamanhoMae) {
+            erroMae.innerText = 'Mãe';
+            erroMae.style.color = '#4F4F4F';
+            return;
+        }
+
+    })
+    paiInput.addEventListener('input', function () {
+
+        let nomeDoPai = paiInput.value;
+        let tamanhoPai = nomeDoPai.length >= 5;
+
+        if (tamanhoPai) {
+            erroPai.innerText = 'Pai';
+            erroPai.style.color = '#4F4F4F';
+            return;
+        }
+
+    })
+
     
 
     if (cpfInput.value === "") {
@@ -262,11 +331,19 @@ btnSend.addEventListener('click', (e) => {
     };
     
   
-   
+   btnConfirm.addEventListener('click', function(){
+    modalSucess.style.display = 'none';
+    document.querySelector('.cabecalho').style.display = 'block';
+    document.querySelector('.contentTable').style.display = 'flex';
+    document.querySelector('#back').style.backgroundColor = '#E5E5E5';
+    location.reload()
+
+   })
 
 
     if (cadastrar()) {
         modalPaciente.style.display = 'none';
+        modalSucess.style.display = 'flex'
         document.querySelector('.cabecalho').style.display = 'block';
         document.querySelector('.contentTable').style.display = 'flex';
         document.querySelector('#back').style.backgroundColor = '#E5E5E5';
