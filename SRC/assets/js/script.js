@@ -138,28 +138,25 @@ const requisito3 = document.querySelector('#requisito3');
 const subscrever = document.querySelector('#subscribe');
 
 function checkEmail(email) {
-  fetch('https://raphadev.onrender.com/login')
+  return fetch('https://raphadev.onrender.com/login')
     .then(response => response.json())
     .then(data => {
-      const usuarios = data.login;
+      const usuarios = data.login ? data.login : data;
       const usuarioEncontrado = usuarios.find(usuario => usuario.emailUser === email);
-      if (usuarioEncontrado) {
-        location.reload();
-        return;
-      } else {
-        console.log('Email disponível para cadastro');
-        
-      }
+      return !!usuarioEncontrado; 
     })
-    .catch(error => console.error(error));
-}
+    .catch(error => {
+      console.error(error);
+      return false;
+    });
 
-btnProsseguir.addEventListener('click', function seguir() {
+  }
+
+btnProsseguir.addEventListener('click', async function seguir(){
   if (nameInput.value === "") {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Digite seu nome.</p>'
     modal.addEventListener('click', fecharModal);
-
     return;
   }
 
@@ -169,17 +166,19 @@ btnProsseguir.addEventListener('click', function seguir() {
     modal.addEventListener('click', fecharModal);
     return;
   }
-  if(checkEmail){
-    
+ 
+
+  const emailJaCadastrado = await checkEmail(emailInput1.value);
+  if (emailJaCadastrado) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p>Ops! Email já cadastrado, efetue o login</p>';
-    setInterval( e => {
-    modal.addEventListener('submit', fecharModal);
-    location.reload()
-  }, 2000)
-  return
-    
+    setInterval(e => {
+      modal.addEventListener('submit', fecharModal);
+      location.reload();
+    }, 1000);
+    return;
   }
+  
 
   subscrever.style.display = 'none';
   continueCadastro.style.display = 'flex';
