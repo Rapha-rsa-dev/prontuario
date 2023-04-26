@@ -34,6 +34,7 @@ const modConfirm = document.querySelector('.mod');
 const userTela = document.querySelector("#userName");
 
 const nomeUser = localStorage.getItem('nomeUser');
+const user = JSON.parse(nomeUser);
 
 if (nomeUser) {
   fetch('./db.json')
@@ -45,7 +46,8 @@ if (nomeUser) {
       }
     });
 }
-   
+
+
 
 addNewPaciente.addEventListener('click', addPaciente);
 function addPaciente() {
