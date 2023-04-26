@@ -47,8 +47,6 @@ if (nomeUser) {
 }
 
 
-
-
 addNewPaciente.addEventListener('click', addPaciente);
 function addPaciente() {
     modalPaciente.style.display = 'flex';
@@ -73,6 +71,7 @@ btnYes.addEventListener("click", function() {
      
   });
   
+
 
 let ValidEmail = function ValidEmail(email) {
 
@@ -201,12 +200,6 @@ btnSend.addEventListener('click', (e) => {
           } 
     })
     
-       
-      
-
-
-
-
 
     if (cpfInput.value === "") {
         erroCpf.innerText = 'Preencha o CPF';

@@ -137,7 +137,22 @@ const requisito2 = document.querySelector('#requisito2');
 const requisito3 = document.querySelector('#requisito3');
 const subscrever = document.querySelector('#subscribe');
 
-
+function checkEmail(email) {
+  fetch('https://raphadev.onrender.com/login')
+    .then(response => response.json())
+    .then(data => {
+      const usuarios = data.login;
+      const usuarioEncontrado = usuarios.find(usuario => usuario.emailUser === email);
+      if (usuarioEncontrado) {
+        location.reload();
+        return;
+      } else {
+        console.log('Email disponível para cadastro');
+        
+      }
+    })
+    .catch(error => console.error(error));
+}
 
 btnProsseguir.addEventListener('click', function seguir() {
   if (nameInput.value === "") {
@@ -154,6 +169,17 @@ btnProsseguir.addEventListener('click', function seguir() {
     modal.addEventListener('click', fecharModal);
     return;
   }
+  if(checkEmail){
+    
+    modal.style.display = 'block';
+    modalEdit.innerHTML = '<p>Ops! Email já cadastrado, efetue o login</p>';
+    setInterval( e => {
+    modal.addEventListener('submit', fecharModal);
+    location.reload()
+  }, 2000)
+  return
+    
+  }
 
   subscrever.style.display = 'none';
   continueCadastro.style.display = 'flex';
@@ -166,13 +192,13 @@ formCadastro.addEventListener('submit', (event) => {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
     modal.addEventListener('click', fecharModal);
-    
+    return;
   }
   if (!validarSenha(passwordInput3.value, 8)) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>';
     modal.addEventListener('click', fecharModal);
-    
+    return;
   }
   async function listerUser(users) {
     return fetch('https://raphadev.onrender.com/login', {
@@ -207,6 +233,8 @@ formCadastro.addEventListener('submit', (event) => {
 localStorage.setItem("nomeUser", nome);
 
   };
+ 
+  
   
   finalizar.addEventListener('click', (e) => {
     e.preventDefault();
@@ -215,7 +243,6 @@ localStorage.setItem("nomeUser", nome);
       modalEdit.innerHTML = '<p>As senhas inseridas são diferentes.</p>';
       modal.addEventListener('click', fecharModal);
       return;
-      
     }
     if (listar()) {
       modal.style.display = 'block';
