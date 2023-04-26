@@ -34,18 +34,18 @@ const modConfirm = document.querySelector('.mod');
 const userTela = document.querySelector("#userName");
 
 const nomeUser = localStorage.getItem('nomeUser');
-const user = JSON.parse(nomeUser);
-
 if (nomeUser) {
-  fetch('./db.json')
+  fetch('https://raphadev.onrender.com/login')
     .then(response => response.json())
     .then(data => {
-      const user = data.login.find(user => user.nomeUser === nomeUser);
+      const users = data.login ? data.login : data;
+      const user = users.find(user => user.nomeUser === nomeUser);
       if (user) {
         document.querySelector('#userName').textContent = `${user.nomeUser}`;
       }
     });
 }
+
 
 
 

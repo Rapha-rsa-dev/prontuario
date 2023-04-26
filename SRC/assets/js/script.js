@@ -96,37 +96,30 @@ formulario.addEventListener("submit",  async (event) => {
     return;
   }
   
-  const response = await fetch('db.json') 
   
-  .then(response => response.json())
-  .then(data => {
-    const email = emailInput.value;
-    const senha = passwordInput.value;
-    localStorage.setItem("emailUser", email)
-    localStorage.setItem("senhaUser", senha)
-
-    const user = data.login.find(user => user.emailUser === email && user.senhaUser === senha);
-
-    if (user) {
+  const response = await fetch('https://raphadev.onrender.com/login');
+if (response.ok) {
+  const data = await response.json();
+  const email = emailInput.value;
+  const senha = passwordInput.value;
+  localStorage.setItem("emailUser", email)
+  localStorage.setItem("senhaUser", senha)
+  const user = data.find(user => user.emailUser === email && user.senhaUser === senha);
+  if (user) {
     formulario.style.display = 'none';
     formCadastro.style.display = 'none';
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Bem vindo(a)! </p>'
     modal.addEventListener('click', fecharModal);
     setTimeout(function () {
-      window.location.href = '/prontuario.html'
-      
-    }, 2300);
-    
-      
-    } else {
+      window.location.href = '/prontuario.html'      
+    }, 2300);      
+  } else {
     modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Ops! Email ou Senha invalidos, tente novamente. </p>'
-    modal.addEventListener('click', fecharModal);
-    
-    }
-})
-
+    modalEdit.innerHTML = '<p> Ops! Email ou Senha inválidos, tente novamente. </p>'
+    modal.addEventListener('click', fecharModal);    
+  }
+}  
 });
 
 //tela cadastro
@@ -277,4 +270,4 @@ mostrarSenhaBtn3.addEventListener('click', () => {
     passwordInput3.type = 'password';
     mostrarSenhaBtn3.textContent = 'Mostrar';
   }
-});
+})
