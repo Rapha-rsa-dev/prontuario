@@ -210,6 +210,8 @@ formCadastro.addEventListener('submit', (event) => {
     
 
     await listerUser(dadosUser);
+    const nome = nameInput.value;
+localStorage.setItem("nomeUser", nome);
 
   };
   
