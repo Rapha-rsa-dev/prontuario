@@ -96,7 +96,7 @@ formulario.addEventListener("submit",  async (event) => {
     return;
   }
   
-  const response = await fetch('./db.json') 
+  const response = await fetch('db.json') 
   
   .then(response => response.json())
   .then(data => {
