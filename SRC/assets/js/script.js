@@ -28,6 +28,7 @@ function cadastro() {
 
 let fecharModal = function fecharModal() {
   modal.style.display = 'none';
+  
 }
 let isValidPassword = function isValidPassword(passwordInput2, passwordInput3) {
   if (passwordInput2 === passwordInput3) {
@@ -94,12 +95,15 @@ formulario.addEventListener("submit",  async (event) => {
     modal.addEventListener('click', fecharModal);
     return;
   }
+  
   const response = await fetch('./db.json') 
   
   .then(response => response.json())
   .then(data => {
     const email = emailInput.value;
     const senha = passwordInput.value;
+    localStorage.setItem("emailUser", email)
+    localStorage.setItem("senhaUser", senha)
 
     const user = data.login.find(user => user.emailUser === email && user.senhaUser === senha);
 
@@ -139,6 +143,8 @@ const requisito1 = document.querySelector('#requisito1');
 const requisito2 = document.querySelector('#requisito2');
 const requisito3 = document.querySelector('#requisito3');
 const subscrever = document.querySelector('#subscribe');
+
+
 
 btnProsseguir.addEventListener('click', function seguir() {
   if (nameInput.value === "") {
@@ -186,13 +192,14 @@ formCadastro.addEventListener('submit', (event) => {
       body: JSON.stringify(users),
     });
   }
-
+  
   async function listar() {
 
     const nomeUser = nameInput.value;
     const emailUser = emailInput1.value;
     const senhaUser = passwordInput2.value;
     const validatePass = passwordInput3.value;
+    
 
     const dadosUser = {
       nomeUser,
@@ -200,10 +207,12 @@ formCadastro.addEventListener('submit', (event) => {
       senhaUser
 
     };
+    
 
     await listerUser(dadosUser);
 
   };
+  
   finalizar.addEventListener('click', (e) => {
     e.preventDefault();
     if (passwordInput2.value !== passwordInput3.value) {
@@ -219,9 +228,7 @@ formCadastro.addEventListener('submit', (event) => {
       setTimeout(function () {
         formCadastro.submit();
       }, 2000);
-    } else {
-      console.log("Por favor, corrija os erros no formulário.");
-    }
+    } 
   });
 
 })
