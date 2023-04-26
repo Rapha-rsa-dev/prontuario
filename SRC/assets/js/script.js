@@ -166,13 +166,13 @@ formCadastro.addEventListener('submit', (event) => {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
     modal.addEventListener('click', fecharModal);
-    return;
+    
   }
   if (!validarSenha(passwordInput3.value, 8)) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>';
     modal.addEventListener('click', fecharModal);
-    return;
+    
   }
   async function listerUser(users) {
     return fetch('https://raphadev.onrender.com/login', {
@@ -215,6 +215,7 @@ localStorage.setItem("nomeUser", nome);
       modalEdit.innerHTML = '<p>As senhas inseridas são diferentes.</p>';
       modal.addEventListener('click', fecharModal);
       return;
+      
     }
     if (listar()) {
       modal.style.display = 'block';

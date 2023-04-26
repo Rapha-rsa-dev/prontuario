@@ -74,12 +74,6 @@ btnYes.addEventListener("click", function() {
   });
   
 
-
-
-
-
-
-
 let ValidEmail = function ValidEmail(email) {
 
     const emailRegex = new RegExp(
