@@ -9,10 +9,12 @@
       "senhaUser": "!@#RSAdev",
       "id": 2
     },
+    {
     "nomeUser": "teste",
       "emailUser": "admin@amin.admin",
       "senhaUser": "@Admininastror",
       "id": 2
+    }
   ],
   "pacientes": [
     {
