@@ -18,6 +18,18 @@
   ],
   "pacientes": [
     {
+      "cpf": "028.769.245-01",
+      "nome": "raphael santos araujo",
+      "dataDeNasc": "31/07/1986",
+      "email": "raphael.rsa@hotmail.com",
+      "genero": "Masculino",
+      "nacionalidade": "Brasil",
+      "naturalidade": "Aracaju",
+      "profissao": "vagabundo",
+      "escolaridade": "Medio",
+      "estadoCivil": "solteiro",
+      "mae": "rita de cassia",
+      "pai": "Jose souza",
       "id": 1
     }
   ]

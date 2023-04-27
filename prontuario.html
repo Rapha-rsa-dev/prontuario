@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script  src="./SRC/assets/js/app.js" defer></script>
+    <script src="./SRC/assets/js/app.js" defer></script>
     <title>Prontuario</title>
 </head>
 
@@ -33,13 +33,13 @@
         <div class="modedit">
             <p> Ao sair todas as informções serão perdidas.</p>
             <p>Tem certeza que dejeja sair?</p>
-           <div class="confirm">
-                 <button class="Yes">Sim</button>
-                 <button class="No">Não</button>
-                </div>
+            <div class="confirm">
+                <button class="Yes">Sim</button>
+                <button class="No">Não</button>
+            </div>
 
         </div>
-       
+
     </div>
     <div class="main-conteiner" id="main-conteiner">
         <section class="cabecalho" id="cabecalho">
@@ -70,7 +70,7 @@
                     <div class="buttonNewPacient" id="newPacient">
                         <button class="newPacientAdd"><i class="fa-solid fa-circle-plus"></i> Novo cadastro</button>
                     </div>
-                    <form>
+                    <form class="sendForm" id="enviarForm">
                         <div class="search" id="search">
                             <input type="search" placeholder="Pesquisar">
                             <div class="filter" id="filter">
@@ -81,54 +81,57 @@
                 </div>
 
                 <div class="containertabela">
-                    <div class="tableContent" id="tableContent">
-                        <div class="codigo" id="codigo">
-                            <span>Código</span>
-                        </div>
-                        <div class="nometabela" id="codigo">
-                            <span>Nome</span>
-                        </div>
-                        <div class="CPF" id="codigo">
-                            <span>CPF</span>
-                        </div>
-                        <div class="actions" id="codigo">
-                            <span>Ações</span>
-                        </div>
 
+                    <table class="tableContent">
+                        <thead>
+                            <tr>
 
-                    </div>
-                    <div class="dadostabela">
-                        <div class="codigo" id="codigo">
-                            <span id="codigoUser"></span>
-                        </div>
-                        <div class="nometabela" id="codigo">
-                            <span id="nomeUser"></span>
-                        </div>
-                        <div class="CPF" id="codigo">
-                            <span id="cpfUser"></span>
-                        </div>
-                        <div class="icons">
-                            <i class="fa-sharp fa-solid fa-clipboard-list" id="clipboard"></i>
-                            <i class="fa-sharp fa-solid fa-pen-line" id="penLine"><img
-                                    src="./SRC/assets/img/pen_line.svg" alt=""></i>
-                            <i class="fa-solid fa-trash-can" id="trash"></i>
-                        </div>
-                    </div>
+                                <th class="codigo">Código</th>
+                                <th class="nometabela">Nome</th>
+                                <th class="CPF">CPF</th>
+                                <th class="actions">Ações</th>
 
+                            </tr>
+                        </thead>
+                        <div class="dadostabela1">
+                            <tbody class="dadostabela">
+                                <tr>
+                                    <td id="codigoUser">${paciente.id}</td>
+                                    <td id="nomeUser">${paciente.nome}</td>
+                                    <td id="cpfUser">${paciente.cpf}</td>
+                                    <td id="iconn">
+                                        <div class="icons">
+                                            <i class="fa-sharp fa-solid fa-clipboard-list" id="clipboard"></i>
+                                            <i class="fa-sharp fa-solid fa-pen-line" id="penLine"><img
+                                                    src="./SRC/assets/img/pen_line.svg" alt=""></i>
+                                            <i class="fa-solid fa-trash-can" id="trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </div>
+                    </table>
+                    
                 </div>
+                <div id="pagination">
+                    <span id="prev"><i class="fas fa-chevron-left"></i></span>
+                    <span id="next"><i class="fas fa-chevron-right"></i></span>
+                  </div>
         </section>
+       
 
         <div class="modal-paciente" id="modal-paciente">
-            <form class="sendForm"></form>
 
-            <div class="paceiteTitulo"> 
-
+            <div class="paceiteTitulo">
                 <p class="paceiteTitulotext">Novo Paciente</p>
                 <div class="modalerror">
-                        
+
                 </div>
                 <i id="closeModal" class="fa-solid fa-circle-xmark"></i>
             </div>
+
             <div class="one">
                 <div class="cpfData" id="cpfData">
                     <div class="obrigatorio">
@@ -141,7 +144,7 @@
                     <div class="obrigatorio">
                         <label for="nomedados" id="nomeErro">Nome</label>
                         <span>*</span>
-                        
+
                     </div>
                     <input type="text" id="nomedados" placeholder="Digite">
                 </div>
@@ -469,7 +472,7 @@
                         <label for="maritalodados" id="erroEstadoCivil">Estado civil</label>
                         <span>*</span>
                     </div>
-                    <select class="select" name="Selecione" " id="maritaldados"> <i
+                    <select class="select" name="Selecione" id="maritaldados"> <i
                             class="fa-sharp fa-solid fa-caret-down" id="arrow-down"></i>
                         <option value="" selected="Selecione" disabled>Selecione</option>
                         <option value="casado"> Casado</option>
@@ -481,7 +484,7 @@
 
                 <div class="motherData" id="motherData">
                     <div class="obrigatorio">
-                        <label for="motherdados"id="erroMae">Mãe</label>
+                        <label for="motherdados" id="erroMae">Mãe</label>
                         <span>*</span>
                     </div>
                     <input type="text" id="motherdados" placeholder="Digite">
@@ -494,16 +497,15 @@
                     <input type="text" id="fatherdados" placeholder="Digite">
                 </div>
             </div>
+
             <div class="send">
                 <div class="text5">
                     <span>*Campos obrigatorios</span>
                 </div>
                 <div class="btnsend">
                     <p class="cancel">Cancelar</p>
-                    <button id="sendPacient">Criar</button>
+                    <button type="submit" id="sendPacient">Criar</button>
                 </div>
-
-
             </div>
             </form>
 

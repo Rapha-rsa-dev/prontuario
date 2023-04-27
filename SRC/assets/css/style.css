@@ -661,36 +661,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     max-width: 100%;
     width: 94%;
 
 }
 
+
 .tableContent {
     display: flex;
+    justify-content: cemter;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     margin: 0;
 }
 
-.dadostabela {
-    display: none;
-    width: 100%;
+.dadostabela1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+
+}
+
+.dadostabela,
+table,
+tr,
+td {
+    border: 1px solid #E0E0E0;
+    border-collapse: collapse;
 }
 
 .codigo {
-    border: 1px solid #E0E0E0;
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    max-width: 100%;
+    width: 280px;
+    padding: 8px;
     color: #2F80ED;
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -700,12 +710,10 @@ body {
 }
 
 .nometabela {
-    border: 1px solid #E0E0E0;
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    border-left: 1px solid;
+    max-width: 100%;
+    width: 350px;
+    padding: 8px;
     color: #2F80ED;
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -715,13 +723,11 @@ body {
 }
 
 .CPF {
-    border: 1px solid #E0E0E0;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    color: #2F80ED;
+    border-left: 1px solid;
+    max-width: 100%;
+    width: 300px;
+    padding: 8px;
+    color: #3179d6;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -730,35 +736,77 @@ body {
 }
 
 .actions {
-    border: 1px solid #E0E0E0;
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    color: #2F80ED;
+    border-left: 1px solid;
+    max-width: 100%;
+    width: 200px;
+    padding: 8px;
+    color: #3179d6;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 
-#codigoUser,
-#nomeUser,
-#cpfUser {
+#codigoUser {
+    max-width: 100%;
+    width: 280px;
+    padding: 8px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
     color: #4F4F4F;
+    padding: 8px;
+}
+
+#nomeUser {
+    max-width: 100%;
+    width: 350px;
+    padding: 8px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4F4F4F;
+    padding: 8px;
+}
+
+#cpfUser {
+    max-width: 100%;
+    width: 300px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4F4F4F;
+    padding: 8px;
+}
+
+#iconn {
+    max-width: 100%;
+    width: 194.5px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4F4F4F;
+    text-align: center;
+    padding: 8px;
 }
 
 .icons {
     display: flex;
     justify-content: space-around;
-    border: 1px solid #E0E0E0;
-    width: 20%;
+    align-items: center;
     display: flex;
     align-items: center;
-    padding: 10px;
     color: #2F80ED;
+    gap: 10px;
 
 }
 
@@ -815,11 +863,36 @@ body {
     transform: scale(1.03);
 }
 
+#pagination {
+    display: flex;
+    position: fixed;
+    top: 80%;
+    gap: 10%;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+#pagination button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #616161;
+    border: none;
+    background-color: #00995D;
+    color: #FFFFFF;
+    font-size: 14PX;
+    font-weight: 500;
+
+}
+
+#pagination button:hover {
+    transform: scale(1.04);
+}
+
 .modal-paciente {
     position: absolute;
     top: 8%;
     left: 10%;
-    transform: translate(-50% -50%);
     max-width: 100%;
     width: 80%;
     max-height: 100vh;
@@ -996,7 +1069,7 @@ select {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
+
 }
 
 .sucessContent p {
