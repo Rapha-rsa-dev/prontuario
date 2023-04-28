@@ -15,11 +15,13 @@
       "senhaUser": "@Admininastror",
       "id": 2
     },
+    {
     "nomeUser": "Joao das Candongas",
       "emailUser": "joao@gmail.com",
       "senhaUser": "!@#RSAdev",
       "id": 3
-  ]
+    }
+  ],
   "pacientes": [
     {
       "cpf": "028.769.245-01",
