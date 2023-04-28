@@ -33,6 +33,11 @@ const modConfirm = document.querySelector('.mod');
 const userTela = document.querySelector("#userName");
 const modalSucess = document.querySelector('.modalSucess');
 const btnConfirm = document.querySelector('#cadasroConfirm');
+const modDelete = document.querySelector('.modDelete');
+const btnNoDelete = document.querySelector('.no');
+const btnDelete = document.querySelector('.yes');
+
+
 
 const nomeUser = localStorage.getItem('nomeUser');
 if (nomeUser) {
@@ -95,7 +100,7 @@ async function newPacient(paciente) {
         },
         body: JSON.stringify(paciente),
     });
-}
+};
 
 async function cadastrar() {
 
@@ -112,17 +117,19 @@ async function cadastrar() {
     const mae = maeInput.value;
     const pai = paiInput.value;
 
+
     const dadosPaciente = {
         cpf, nome, dataDeNasc,
         email, genero, nacionalidade,
         naturalidade, profissao, escolaridade,
-        estadoCivil, mae, pai
+        estadoCivil, mae, pai, idMedico: nomeUser
 
     };
 
     await newPacient(dadosPaciente);
 
 };
+
 
 //se localizando no codigo
 
@@ -139,22 +146,22 @@ cpfInput.addEventListener('input', () => {
     if (tem11numeros) {
         erroCpf.innerText = 'CPF';
         erroCpf.style.color = '#4F4F4F';
-
-    }
+        return;
+    };
 });
 
 nameInputPaciente.addEventListener('input', function () {
 
     let nomeTamanho = nameInputPaciente.value;
-    let tem5Digitos = nomeTamanho.length >= 5;
+    let tem5Digitos = nomeTamanho.length >= 2;
 
     if (tem5Digitos) {
         erroNome.innerText = 'Nome';
         erroNome.style.color = '#4F4F4F';
-        ;
-    }
+        return;
+    };
 
-})
+});
 
 emailInputPaciente.addEventListener('input', function () {
 
@@ -168,9 +175,9 @@ emailInputPaciente.addEventListener('input', function () {
     } else {
         erroEmail.innerText = 'Digite um Email valido';
         erroEmail.style.color = '#e90505';
-
-    }
-})
+        return;
+    };
+});
 dataDeNascInput.addEventListener('input', () => {
 
     let diaMesAno = dataDeNascInput.value;
@@ -184,253 +191,349 @@ dataDeNascInput.addEventListener('input', () => {
     if (tem8numeros) {
         erroData.innerText = 'Data de Nascimento';
         erroData.style.color = '#4F4F4F';
-    }
+        return;
+    };
 });
 generoInput.addEventListener('change', function () {
     if (generoInput.checkValidity()) {
         erroGenero.innerText = 'Sexo/Gênero';
         erroGenero.style.color = '#4F4F4F';
-    }
-})
+        return;
+    };
+});
 nacionalidadeInput.addEventListener('change', function () {
     if (nacionalidadeInput.checkValidity()) {
         erroNacionalidade.innerText = 'Nacionalidade';
         erroNacionalidade.style.color = '#4F4F4F';
-    }
-})
+        return;
+    };
+});
 naturalidadeInput.addEventListener('input', function () {
 
     let naturalTamanho = naturalidadeInput.value;
-    let temUmaCidade = naturalTamanho.length >= 5;
+    let temUmaCidade = naturalTamanho.length >= 2;
 
     if (temUmaCidade) {
         erroNaturalidade.innerText = 'Naturalidade';
         erroNaturalidade.style.color = '#4F4F4F';
-        ;
-    }
+        return;
+    };
 
-})
+});
 profissaoInput.addEventListener('input', function () {
 
     let profissaoTamanho = profissaoInput.value;
-    let temUmJob = profissaoTamanho.length >= 4;
+    let temUmJob = profissaoTamanho.length >= 2;
 
     if (temUmJob) {
         erroProfissao.innerText = 'Profissão';
         erroProfissao.style.color = '#4F4F4F';
-        ;
-    }
+        return;
+    };
 
-})
+});
 escolaridadeInput.addEventListener('input', function () {
 
     let nivelescolar = escolaridadeInput.value;
-    let tamanhoEscolar = nivelescolar.length >= 5;
+    let tamanhoEscolar = nivelescolar.length >= 2;
 
     if (tamanhoEscolar) {
         erroEscolaridade.innerText = 'Escolaridade';
         erroEscolaridade.style.color = '#4F4F4F';
-        ;
-    }
+        return;
+    };
 
-})
+});
 estadoCivilInput.addEventListener('change', function () {
     if (estadoCivilInput.checkValidity()) {
         erroEstadoCivil.innerText = 'Estado Civil';
         erroEstadoCivil.style.color = '#4F4F4F';
-    }
-})
+        return;
+    };
+});
 maeInput.addEventListener('input', function () {
 
     let nomeDamae = maeInput.value;
-    let tamanhoMae = nomeDamae.length >= 5;
+    let tamanhoMae = nomeDamae.length >= 2;
 
     if (tamanhoMae) {
         erroMae.innerText = 'Mãe';
         erroMae.style.color = '#4F4F4F';
-        ;
-    }
+        return;
+    };
 
-})
+});
 paiInput.addEventListener('input', function () {
 
     let nomeDoPai = paiInput.value;
-    let tamanhoPai = nomeDoPai.length >= 5;
+    let tamanhoPai = nomeDoPai.length >= 2;
 
     if (tamanhoPai) {
         erroPai.innerText = 'Pai';
         erroPai.style.color = '#4F4F4F';
         return;
+    };
+
+});
+
+
+
+btnSend.addEventListener('click', (event) => {
+    event.preventDefault();
+
+
+    if (cpfInput.value === "") {
+        erroCpf.innerText = 'Preencha o CPF';
+        erroCpf.style.color = '#e90505';
+        return;
+    };
+
+    if (nameInputPaciente.value === "") {
+        erroNome.innerText = 'Preencha o nome ';
+        erroNome.style.color = '#e90505';
+        return;
+    };
+
+    if (dataDeNascInput.value === "") {
+        erroData.innerText = 'Digite uma data com dd/mm/aaaa';
+        erroData.style.color = '#e90505';
+        return;
+    };
+
+    if (emailInputPaciente.value === "" || !ValidEmail(emailInputPaciente.value)) {
+        erroEmail.innerText = 'Digite um email valido';
+        erroEmail.style.color = '#e90505';
+        return;
+    };
+    if (generoInput.value === "") {
+        erroGenero.innerText = 'Selecione o gênero';
+        erroGenero.style.color = '#e90505';
+        return;
     }
+    if (naturalidadeInput.value === "") {
+        erroNaturalidade.innerText = 'Digite o local de Nascimento';
+        erroNaturalidade.style.color = '#e90505';
+        return;
+    };
+    if (nacionalidadeInput.value === "") {
+        erroNacionalidade.innerText = 'Digite o país de nascimento';
+        erroNacionalidade.style.color = '#e90505';
+        return;
+    };
+    if (profissaoInput.value === "") {
+        erroProfissao.innerText = 'Digite uma profissão';
+        erroProfissao.style.color = '#e90505';
+        return;
+    };
+    if (escolaridadeInput.value === "") {
+        erroEscolaridade.innerText = 'Digite o nivel escolar';
+        erroEscolaridade.style.color = '#e90505';
+        return;
+    };
+    if (estadoCivilInput.value === "") {
+        erroEstadoCivil.innerText = 'Selecione o estado civil';
+        erroEstadoCivil.style.color = '#e90505';
+        return;
+    };
+    if (maeInput.value === "") {
+        erroMae.innerText = 'Digite um nome';
+        erroMae.style.color = '#e90505';
+        return;
+    };
+    if (paiInput.value === "") {
+        erroPai.innerText = 'Digite um nome';
+        erroPai.style.color = '#e90505';
+        return;
+    };
+
+    btnConfirm.addEventListener('click', function () {
+        modalSucess.style.display = 'none';
+        document.querySelector('.cabecalho').style.display = 'block';
+        document.querySelector('.contentTable').style.display = 'flex';
+        document.querySelector('#back').style.backgroundColor = '#E5E5E5';
+        location.reload()
+
+    })
+
+    if (cadastrar()) {
+        modalPaciente.style.display = 'none';
+        modalSucess.style.display = 'flex'
+        document.querySelector('.cabecalho').style.display = 'block';
+        document.querySelector('.contentTable').style.display = 'flex';
+        document.querySelector('#back').style.backgroundColor = '#E5E5E5';
+        return
+
+    } else {
+        console.log("Por favor, corrija os erros no formulário.");
+        return
+    }
+
+});
+
+enviarForm.addEventListener('DOMContentLoaded', function () {
+    const enviarForm = document.querySelector('.sendForm');
+    setTimeout(function () {
+        enviarForm.submit();
+        return;
+    }, 2000);
+    return
+});
+
+
+function viwerPaciente() {
+
+
+
+}
+
+
+function editarPaciente() {
+    modalPaciente.style.display = 'flex';
+    document.querySelector('.paceiteTitulotext').innerText = 'Dados do Paciente';
+    document.querySelector('.send').style.display = 'none';
+    document.querySelector('#editar').style.display = 'block';
+
+}
+const btnEditar = document.querySelector('#editar');
+btnEditar.addEventListener('click', function () {
+    modalPaciente.style.display = 'flex';
+    document.querySelector('.paceiteTitulotext').innerText = 'Editar dados do Paciente';
+    btnSend.innerText = 'Salvar alterações';
+    document.querySelector('#editar').style.display = 'none';
 
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-    const enviarForm = document.querySelector('.sendForm');
+function deletarPacient() {
+
+    modDelete.style.display = 'block';
+    document.querySelector('#text6').innerText = 'Essa ação é irreversivel';
+    document.querySelector('#text7').innerText = 'Tem certeza que deseja continuar';
 
 
-    btnSend.addEventListener('click', (event) => {
-        event.preventDefault();
-        
-        
-       
-
-      
-        if (cpfInput.value === "") {
-            erroCpf.innerText = 'Preencha o CPF';
-            erroCpf.style.color = '#e90505';
-
-        };
-
-        if (nameInputPaciente.value === "") {
-            erroNome.innerText = 'Preencha o nome ';
-            erroNome.style.color = '#e90505';
-
-        };
-        if (dataDeNascInput.value === "") {
-            erroData.innerText = 'Digite uma data com dd/mm/aaaa';
-            erroData.style.color = '#e90505';
-        };
-
-        if (emailInputPaciente.value === "" || !ValidEmail(emailInputPaciente.value)) {
-            erroEmail.innerText = 'Digite um email valido';
-            erroEmail.style.color = '#e90505';
-
-        };
-        if (generoInput.value === "") {
-            erroGenero.innerText = 'Selecione o gênero';
-            erroGenero.style.color = '#e90505';
-        }
-        if (naturalidadeInput.value === "") {
-            erroNaturalidade.innerText = 'Digite o local de Nascimento';
-            erroNaturalidade.style.color = '#e90505';
-
-        };
-        if (nacionalidadeInput.value === "") {
-            erroNacionalidade.innerText = 'Digite o país de nascimento';
-            erroNacionalidade.style.color = '#e90505';
-        };
-        if (profissaoInput.value === "") {
-            erroProfissao.innerText = 'Digite uma profissão';
-            erroProfissao.style.color = '#e90505';
-
-        };
-        if (escolaridadeInput.value === "") {
-            erroEscolaridade.innerText = 'Digite o nivel escolar';
-            erroEscolaridade.style.color = '#e90505';
-
-        };
-        if (estadoCivilInput.value === "") {
-            erroEstadoCivil.innerText = 'Selecione o estado civil';
-            erroEstadoCivil.style.color = '#e90505';
-
-        };
-        if (maeInput.value === "") {
-            erroMae.innerText = 'Digite um nome';
-            erroMae.style.color = '#e90505';
-
-        };
-        if (paiInput.value === "") {
-            erroPai.innerText = 'Digite um nome';
-            erroPai.style.color = '#e90505';
-            return;
-        };
 
 
-        btnConfirm.addEventListener('click', function () {
-            modalSucess.style.display = 'none';
-            document.querySelector('.cabecalho').style.display = 'block';
-            document.querySelector('.contentTable').style.display = 'flex';
-            document.querySelector('#back').style.backgroundColor = '#E5E5E5';
-            location.reload()
-
-        })
+}
 
 
-        if (cadastrar()) {
-            modalPaciente.style.display = 'none';
-            modalSucess.style.display = 'flex'
-            document.querySelector('.cabecalho').style.display = 'block';
-            document.querySelector('.contentTable').style.display = 'flex';
-            document.querySelector('#back').style.backgroundColor = '#E5E5E5';
-            setTimeout(function () {
-                enviarForm.submit();
-            }, 2000);
-            return
-
-        } else {
-            console.log("Por favor, corrija os erros no formulário.");
-        }
-
-    });
-
-});
 
 const pacientesPorPagina = 6;
 let paginaAtual = 1;
 
 function exibirPacientes(pacientes) {
-  const divPai = document.querySelector('.dadostabela');
-  divPai.innerHTML = "";
+    const divPai = document.querySelector('.dadostabela');
+    divPai.innerHTML = "";
 
-  const startIndex = (paginaAtual - 1) * pacientesPorPagina;
-  const endIndex = startIndex + pacientesPorPagina;
+    const startIndex = (paginaAtual - 1) * pacientesPorPagina;
+    const endIndex = startIndex + pacientesPorPagina;
 
-  pacientes.slice(startIndex, endIndex).forEach(paciente => {
-    const divPaciente = document.createElement('tbody');
-    divPaciente.classList.add('dadostabela');
 
-    divPaciente.innerHTML = `
+    pacientes.slice(startIndex, endIndex).forEach(paciente => {
+        const divPaciente = document.createElement('tbody');
+        divPaciente.classList.add('dadostabela');
+
+
+
+
+
+        divPaciente.innerHTML = `
     
-    <tr>
+        <td>
         <td id="codigoUser">${paciente.id}</td>
-        <td id="nomeUser">${paciente.nome}</td>
+        <td id="nomeUser1">${paciente.nome}</td>
         <td id="cpfUser">${paciente.cpf}</td>
         <td id="iconn">
-            <div class="icons">
-                <i class="fa-sharp fa-solid fa-clipboard-list" id="clipboard"></i>
-                <i class="fa-sharp fa-solid fa-pen-line" id="penLine"><img
-                        src="./SRC/assets/img/pen_line.svg" alt=""></i>
-                <i class="fa-solid fa-trash-can" id="trash"></i>
-            </div>
+            
+        <i onclick="viwerPaciente()" class="fa-sharp fa-solid fa-clipboard-list" id="clipboard"></i>
+        <i onclick="editarPaciente()" class="fa-sharp fa-solid fa-pen-line" id="penLine"><img
+                src="./SRC/assets/img/pen_line.svg" alt=""></i>
+        <i onclick="deletarPacient()" class="fa-solid fa-trash-can" id="trash"></i>
+            
         </td>
-    </tr>
+    
     `;
 
-    divPai.appendChild(divPaciente);
-  });
+
+
+        divPai.appendChild(divPaciente);
+
+    });
 }
+fetch('https://raphadev.onrender.com/pacientes')
+    .then(response => response.json())
+    .then(data => {
+        fetch('https://raphadev.onrender.com/medicos')
+            .then(response => response.json())
+            .then(medicosData => {
+                const idMedico = medicoLogado.id;
+                const idmedico = medicosData.find(medico => medico.id === idMedico);
+
+                const pacientes = data.filter(paciente => paciente.idMedico === medico.id);
+
+                console.log(`Pacientes do médico ${medico.nome}:`, pacientes);
+            });
+    });
+
 
 function exibirPaginacao(pacientes) {
-  const numPaginas = Math.ceil(pacientes.length / pacientesPorPagina);
+    const numPaginas = Math.ceil(pacientes.length / pacientesPorPagina);
 
-  const divPaginacao = document.getElementById('pagination');
-  divPaginacao.innerHTML = "";
+    const divPaginacao = document.getElementById('pagination');
+    divPaginacao.innerHTML = "";
 
-  for (let i = 1; i <= numPaginas; i++) {
-    const botaoPagina = document.createElement('button');
-    botaoPagina.innerText = i;
-    if (i === paginaAtual) {
-      botaoPagina.classList.add('active');
+    for (let i = 1; i <= numPaginas; i++) {
+        const botaoPagina = document.createElement('button');
+        botaoPagina.innerText = i;
+        if (i === paginaAtual) {
+            botaoPagina.classList.add('active');
+        }
+        botaoPagina.addEventListener('click', () => {
+            paginaAtual = i;
+            exibirPacientes(pacientes);
+            exibirPaginacao(pacientes);
+        });
+        divPaginacao.appendChild(botaoPagina);
     }
-    botaoPagina.addEventListener('click', () => {
-      paginaAtual = i;
-      exibirPacientes(pacientes);
-      exibirPaginacao(pacientes);
-    });
-    divPaginacao.appendChild(botaoPagina);
-  }
 }
 
 async function carregarPacientes() {
-  const response = await fetch('https://raphadev.onrender.com/pacientes');
-  const pacientes = await response.json();
+    const response = await fetch('https://raphadev.onrender.com/pacientes');
+    const pacientes = await response.json();
 
-  exibirPacientes(pacientes);
-  exibirPaginacao(pacientes);
+    exibirPacientes(pacientes);
+    exibirPaginacao(pacientes);
 }
 
 carregarPacientes();
+
+
+const apiURL = 'https://raphadev.onrender.com/pacientes';
+
+
+async function carregarDados() {
+    const response = await fetch(apiURL);
+    const pacientes = await response.json();
+
+
+    btnDelete.setAttribute('data-id', pacientes[0].id);
+}
+
+async function deletarDados(id) {
+    await fetch(apiURL + `/${id}`, {
+        method: 'DELETE'
+    });
+}
+
+btnDelete.addEventListener('click', async () => {
+    const idPaciente = btnDelete.dataset.id;
+    await deletarDados(idPaciente);
+    setTimeout(function () {
+        document.location.reload();
+    }, 1500);
+});
+
+carregarDados();
+
+
 
 
 

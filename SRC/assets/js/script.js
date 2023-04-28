@@ -232,6 +232,7 @@ formCadastro.addEventListener('submit', (event) => {
 localStorage.setItem("nomeUser", nome);
 
   };
+  
  
   
   

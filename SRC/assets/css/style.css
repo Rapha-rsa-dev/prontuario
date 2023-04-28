@@ -365,7 +365,7 @@ body {
     cursor: pointer;
 }
 
-.mod {
+.mod, .modDelete{
     background-color: #4f4f4fcc;
     width: 100%;
     height: 100vh;
@@ -374,7 +374,7 @@ body {
     display: none;
 }
 
-.modedit {
+.modedit, .modedit2 {
     background-color: #FFFFFF;
     width: 30%;
     height: 300px;
@@ -395,7 +395,7 @@ body {
     text-align: center;
 }
 
-.modedit p {
+.modedit p, .modedit2 p {
     position: relative;
     top: 28%
 }
@@ -408,7 +408,7 @@ body {
 
 }
 
-.Yes {
+.Yes, .yes {
     background-color: #00995D;
     width: 40%;
     height: 40px;
@@ -421,7 +421,7 @@ body {
     cursor: pointer;
 }
 
-.No {
+.No, .no {
     background-color: #990000;
     width: 40%;
     height: 40px;
@@ -435,7 +435,7 @@ body {
 }
 
 .Yes:hover,
-.No:hover {
+.No:hover, .yes:hover, .no:hover {
     transform: scale(1.04);
 }
 
@@ -669,6 +669,8 @@ body {
 
 .tableContent {
     display: flex;
+    border: 1px solid #E0E0E0;
+    border-collapse: collapse;
     justify-content: cemter;
     flex-direction: column;
     align-items: center;
@@ -676,26 +678,16 @@ body {
     margin: 0;
 }
 
-.dadostabela1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
 
-}
 
 .dadostabela,
 table,
-tr,
-td {
+
+td, th {
     border: 1px solid #E0E0E0;
     border-collapse: collapse;
 }
+
 
 .codigo {
     max-width: 100%;
@@ -710,7 +702,7 @@ td {
 }
 
 .nometabela {
-    border-left: 1px solid;
+    border-left: 1px solid #E0E0E0;
     max-width: 100%;
     width: 350px;
     padding: 8px;
@@ -723,7 +715,7 @@ td {
 }
 
 .CPF {
-    border-left: 1px solid;
+    border-left: 1px solid #E0E0E0;
     max-width: 100%;
     width: 300px;
     padding: 8px;
@@ -736,7 +728,7 @@ td {
 }
 
 .actions {
-    border-left: 1px solid;
+    border-left: 1px solid #E0E0E0;
     max-width: 100%;
     width: 200px;
     padding: 8px;
@@ -750,7 +742,7 @@ td {
 
 #codigoUser {
     max-width: 100%;
-    width: 280px;
+    width: 270px;
     padding: 8px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -761,9 +753,9 @@ td {
     padding: 8px;
 }
 
-#nomeUser {
+#nomeUser1 {
     max-width: 100%;
-    width: 350px;
+    width: 340px;
     padding: 8px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -776,7 +768,7 @@ td {
 
 #cpfUser {
     max-width: 100%;
-    width: 300px;
+     width: 288px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -787,32 +779,26 @@ td {
 }
 
 #iconn {
+    
     max-width: 100%;
-    width: 194.5px;
+    width: 193px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 17px;
     color: #4F4F4F;
     text-align: center;
     padding: 8px;
 }
 
-.icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    color: #2F80ED;
-    gap: 10px;
-
-}
-
 #clipboard {
-    width: 32px;
-    height: 24px;
+    width: 30px;
+    height: 22px;
     color: #017849;
     border: 1px solid #017849;
     background-color: #FFFFFF;
@@ -825,9 +811,10 @@ td {
 
 }
 
+
 #penLine {
-    width: 32px;
-    height: 24px;
+    width: 30px;
+    height: 22px;
     border: 1px solid #2F80ED;
     background-color: #FFFFFF;
     padding: 2px 8px;
@@ -843,8 +830,8 @@ td {
 }
 
 #trash {
-    width: 32px;
-    height: 24px;
+    width: 30px;
+    height: 22px;
     color: #EB5757;
     border: 1px solid #EB5757;
     background-color: #FFFFFF;
@@ -908,12 +895,35 @@ td {
     box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.15);
 }
 
+
 .paceiteTitulo {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+}
+.space{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#editar{
+    display: none;
+    position: relative;
+    left: -15%;
+    width: 30px;
+    height: 22px;
+    border: 1px solid #2F80ED;
+    background-color: #FFFFFF;
+    padding: 2px 8px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
 }
 
 .paceiteTitulo i {

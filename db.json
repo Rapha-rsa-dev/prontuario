@@ -10,12 +10,16 @@
       "id": 2
     },
     {
-    "nomeUser": "teste",
+      "nomeUser": "teste",
       "emailUser": "admin@amin.admin",
       "senhaUser": "@Admininastror",
       "id": 2
-    }
-  ],
+    },
+    "nomeUser": "Joao das Candongas",
+      "emailUser": "joao@gmail.com",
+      "senhaUser": "!@#RSAdev",
+      "id": 3
+  ]
   "pacientes": [
     {
       "cpf": "028.769.245-01",
@@ -30,7 +34,14 @@
       "estadoCivil": "solteiro",
       "mae": "rita de cassia",
       "pai": "Jose souza",
+       "idMedico": "Raphael Santos Araujo"
       "id": 1
+    }
+  ],
+  "medicos": [
+    {
+      "nome":"Raphael Santos Araujo",
+      "id":1
     }
   ]
 }
