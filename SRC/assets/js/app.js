@@ -41,7 +41,7 @@ const btnDelete = document.querySelector('.yes');
 
 
 
-fetch(`https://raphadev.onrender.com/login/3/${nomeUser}`)
+fetch(`https://raphadev.onrender.com/login/${nomeUser}`)
     .then(response => response.json())
     .then(data => {
         const user = data.login ? data.login : data;
