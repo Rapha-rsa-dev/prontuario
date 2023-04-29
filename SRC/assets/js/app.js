@@ -39,18 +39,16 @@ const btnDelete = document.querySelector('.yes');
 
 
 
-const nomeUser = localStorage.getItem('nomeUser');
-if (nomeUser) {
-    fetch('https://raphadev.onrender.com/login')
-        .then(response => response.json())
-        .then(data => {
-            const users = data.login ? data.login : data;
-            const user = users.find(user => user.nomeUser === nomeUser);
-            if (user) {
-                document.querySelector('#userName').textContent = `${user.nomeUser}`;
-            }
-        });
-}
+
+
+fetch(`https://raphadev.onrender.com/login/3/${nomeUser}`)
+    .then(response => response.json())
+    .then(data => {
+        const user = data.login ? data.login : data;
+        if (user) {
+            document.querySelector('#userName').textContent = `${user.nomeUser}`;
+        }
+    });
 
 
 addNewPaciente.addEventListener('click', addPaciente);
@@ -122,7 +120,7 @@ async function cadastrar() {
         cpf, nome, dataDeNasc,
         email, genero, nacionalidade,
         naturalidade, profissao, escolaridade,
-        estadoCivil, mae, pai, idMedico: nomeUser
+        estadoCivil, mae, pai, idMedico: nome
 
     };
 
@@ -398,8 +396,9 @@ const btnEditar = document.querySelector('#editar');
 btnEditar.addEventListener('click', function () {
     modalPaciente.style.display = 'flex';
     document.querySelector('.paceiteTitulotext').innerText = 'Editar dados do Paciente';
+    document.querySelector('.send').style.display = 'flex';
     btnSend.innerText = 'Salvar alterações';
-    document.querySelector('#editar').style.display = 'none';
+    document.querySelector('#editar').style.display = 'flex';
 
 })
 
@@ -458,6 +457,13 @@ function exibirPacientes(pacientes) {
 
     });
 }
+
+const medicoLogado = {
+    id: 1
+    
+}
+
+
 fetch('https://raphadev.onrender.com/pacientes')
     .then(response => response.json())
     .then(data => {
@@ -465,13 +471,15 @@ fetch('https://raphadev.onrender.com/pacientes')
             .then(response => response.json())
             .then(medicosData => {
                 const idMedico = medicoLogado.id;
-                const idmedico = medicosData.find(medico => medico.id === idMedico);
+                const medico = medicosData.find(medico => medico.id === idMedico);
 
-                const pacientes = data.filter(paciente => paciente.idMedico === medico.id);
+                const pacientes = data.filter(paciente => paciente.idMedico && paciente.idMedico === medico.id);
 
                 console.log(`Pacientes do médico ${medico.nome}:`, pacientes);
             });
     });
+
+
 
 
 function exibirPaginacao(pacientes) {
