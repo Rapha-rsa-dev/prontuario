@@ -43,14 +43,14 @@ const sair = document.querySelector("#sair")
 
 
 sairPopup.addEventListener("click", e => {
-        modalSair.style.display = 'flex';
+    modalSair.style.display = 'flex';
 })
-modalSair.addEventListener('click', function(event) {
-    
+modalSair.addEventListener('click', function (event) {
+
     if (event.target === modalSair) {
-     modalSair.style.display = 'none';
+        modalSair.style.display = 'none';
     }
-  });
+});
 sairPopup.addEventListener("click", e => {
     modalSair.style.display = 'flex';
 })
@@ -61,7 +61,7 @@ sair.addEventListener("click", e => {
     localStorage.removeItem('emailUser');
     setTimeout(() => {
         window.location.href = '/index.html';
-    },1000)
+    }, 1000)
 })
 
 
@@ -73,8 +73,8 @@ const nomeU = fetch(`https://raphadev.onrender.com/login`)
                     console.log(login)
                     if (login) {
                         document.querySelector('#userName').textContent = `${login.nomeUser}`
-                        document.querySelector('.emailLogado').textContent= `${login.emailUser}`
-                        
+                        document.querySelector('.emailLogado').textContent = `${login.emailUser}`
+
                     }
 
                 })
@@ -101,7 +101,7 @@ btnYes.addEventListener("click", function () {
 });
 btnNo.addEventListener("click", function (e) {
     modConfirm.style.display = "none";
-    
+
 });
 let ValidEmail = function ValidEmail(email) {
     const emailRegex = new RegExp(
@@ -123,20 +123,20 @@ async function newPacient(paciente) {
         body: JSON.stringify(paciente),
     });
 };
-    let nomeUser;
+let nomeUser;
 
-    fetch (`https://raphadev.onrender.com/login`).then((response) =>{
-        response.json().then((usuarios) => {
-            usuarios.map((login) => {
+fetch(`https://raphadev.onrender.com/login`).then((response) => {
+    response.json().then((usuarios) => {
+        usuarios.map((login) => {
 
-                if (login){
-                    nomeUser = `${login.nomeUser}`
-                    console.log(nomeUser)
-                }
-                
-            })
+            if (login) {
+                nomeUser = `${login.nomeUser}`
+                console.log(nomeUser)
+            }
+
         })
     })
+})
 
 
 async function cadastrar() {
@@ -156,7 +156,7 @@ async function cadastrar() {
         cpf, nome, dataDeNasc,
         email, genero, nacionalidade,
         naturalidade, profissao, escolaridade,
-        estadoCivil, mae, pai, idMedico:nomeUser
+        estadoCivil, mae, pai, idMedico: nomeUser
     };
     await newPacient(dadosPaciente);
 };
@@ -375,14 +375,40 @@ function editarPaciente() {
     document.querySelector('.paceiteTitulotext').innerText = 'Dados do Paciente';
     document.querySelector('.send').style.display = 'none';
     document.querySelector('#editar').style.display = 'block';
+    const labels = document.querySelectorAll('label');
+    const spans = document.querySelectorAll('span');
+    const inputs = document.querySelectorAll('input');
+    const selects = document.querySelectorAll('select');
+        
+ 
+    for (let i = 0; i < labels.length; i++) {
+        labels[i].remove();
+    }
+    for (let i = 0; i < spans.length; i++) {
+        spans[i].remove();
+    }
+    inputs.forEach(input => {
+        input.disabled = true;
+      });
+      inputs.forEach(input => {
+        input.style.backgroundColor = '#BDBDBD' ;
+      });
+      selects.forEach(select => {
+        select.disabled = true;
+      });
+      selects.forEach(select => {
+        select.style.backgroundColor = '#BDBDBD' ;
+      });
+          
 };
 const btnEditar = document.querySelector('#editar');
-btnEditar.addEventListener('click', function () {
+btnEditar.addEventListener('click', function (e) {
     modalPaciente.style.display = 'flex';
     document.querySelector('.paceiteTitulotext').innerText = 'Editar dados do Paciente';
     document.querySelector('.send').style.display = 'flex';
     btnSend.innerText = 'Salvar alterações';
     document.querySelector('#editar').style.display = 'flex';
+    
 });
 function deletarPacient() {
     modDelete.style.display = 'block';
@@ -423,6 +449,7 @@ fetch('https://raphadev.onrender.com/pacientes')
         fetch('https://raphadev.onrender.com/login')
             .then(response => response.json())
             .then(medicosData => {
+
                 const idMedico = medicoLogado.id;
                 const medico = medicosData.find(medico => medico.id === idMedico);
                 const pacientes = data.filter(paciente => paciente.idMedico && paciente.idMedico === medico.id);
@@ -460,12 +487,14 @@ async function carregarDados() {
     const pacientes = await response.json();
     btnDelete.setAttribute('data-id', pacientes[0].id);
 };
+
+
 async function deletarDados(id) {
     await fetch(apiURL + `/${id}`, {
         method: 'DELETE'
     });
 };
-btnNoDelete.addEventListener("click", function(){
+btnNoDelete.addEventListener("click", function () {
     modDelete.style.display = 'none';
 })
 btnDelete.addEventListener('click', async () => {
