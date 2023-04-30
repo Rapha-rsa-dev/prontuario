@@ -45,6 +45,16 @@ const sair = document.querySelector("#sair")
 sairPopup.addEventListener("click", e => {
         modalSair.style.display = 'flex';
 })
+modalSair.addEventListener('click', function(event) {
+    
+    if (event.target === modalSair) {
+     modalSair.style.display = 'none';
+    }
+  });
+sairPopup.addEventListener("click", e => {
+    modalSair.style.display = 'flex';
+})
+
 sair.addEventListener("click", e => {
     modalSair.style.display = 'none';
     localStorage.removeItem('senhaUser');
@@ -89,8 +99,9 @@ btnYes.addEventListener("click", function () {
     modConfirm.style.display = "none";
     location.reload();
 });
-btnNo.addEventListener("click", function () {
+btnNo.addEventListener("click", function (e) {
     modConfirm.style.display = "none";
+    
 });
 let ValidEmail = function ValidEmail(email) {
     const emailRegex = new RegExp(
@@ -454,6 +465,9 @@ async function deletarDados(id) {
         method: 'DELETE'
     });
 };
+btnNoDelete.addEventListener("click", function(){
+    modDelete.style.display = 'none';
+})
 btnDelete.addEventListener('click', async () => {
     const idPaciente = btnDelete.dataset.id;
     await deletarDados(idPaciente);
