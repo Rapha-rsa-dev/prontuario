@@ -154,7 +154,7 @@ btnProsseguir.addEventListener('click', async function seguir() {
     setInterval(e => {
       modal.addEventListener('submit', fecharModal);
       location.reload();
-    }, 1000);
+    }, 600);
     return;
   };
   subscrever.style.display = 'none';

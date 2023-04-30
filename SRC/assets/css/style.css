@@ -365,7 +365,8 @@ body {
     cursor: pointer;
 }
 
-.mod, .modDelete{
+.mod,
+.modDelete {
     background-color: #4f4f4fcc;
     width: 100%;
     height: 100vh;
@@ -374,7 +375,8 @@ body {
     display: none;
 }
 
-.modedit, .modedit2 {
+.modedit,
+.modedit2 {
     background-color: #FFFFFF;
     width: 30%;
     height: 300px;
@@ -395,7 +397,8 @@ body {
     text-align: center;
 }
 
-.modedit p, .modedit2 p {
+.modedit p,
+.modedit2 p {
     position: relative;
     top: 28%
 }
@@ -408,7 +411,8 @@ body {
 
 }
 
-.Yes, .yes {
+.Yes,
+.yes {
     background-color: #00995D;
     width: 40%;
     height: 40px;
@@ -421,7 +425,8 @@ body {
     cursor: pointer;
 }
 
-.No, .no {
+.No,
+.no {
     background-color: #990000;
     width: 40%;
     height: 40px;
@@ -435,7 +440,9 @@ body {
 }
 
 .Yes:hover,
-.No:hover, .yes:hover, .no:hover {
+.No:hover,
+.yes:hover,
+.no:hover {
     transform: scale(1.04);
 }
 
@@ -683,7 +690,8 @@ body {
 .dadostabela,
 table,
 
-td, th {
+td,
+th {
     border: 1px solid #E0E0E0;
     border-collapse: collapse;
 }
@@ -768,7 +776,7 @@ td, th {
 
 #cpfUser {
     max-width: 100%;
-     width: 288px;
+    width: 288px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -779,7 +787,7 @@ td, th {
 }
 
 #iconn {
-    
+
     max-width: 100%;
     width: 193px;
     height: 40px;
@@ -852,8 +860,8 @@ td, th {
 
 #pagination {
     display: flex;
-    position: fixed;
-    top: 80%;
+    position: relative;
+    top:12%;
     gap: 10%;
     width: 15%;
     align-items: center;
@@ -903,14 +911,16 @@ td, th {
     justify-content: space-between;
 
 }
-.space{
+
+.space {
     width: 30%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
-#editar{
+
+#editar {
     display: none;
     position: relative;
     left: -15%;
@@ -1081,6 +1091,12 @@ select {
     flex-direction: column;
 
 }
+#imgGiff{
+   width: 200px; 
+   position: absolute;
+   top: 10%
+    
+}
 
 .sucessContent p {
     font-family: Comfortaa, sans-serif;
@@ -1107,7 +1123,7 @@ select {
     line-height: 128%;
     text-align: center;
     position: relative;
-    top: 8%;
+    top: 10%;
     cursor: pointer;
     box-shadow: 0, 0, 10px #4F4F4F;
 }
@@ -1121,3 +1137,95 @@ select {
     position: absolute;
     top: 10%;
 }
+
+.popup {
+    position: absolute;
+    left:78.5%;
+    top: 105%;
+    background-color: #ffffff;
+    width: 20.2%;
+    height: 22vh;
+    z-index: 10;
+    border-radius: 18px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 8px rgba(49, 48, 48, 0.2), 0 25px 50px 0 rgba(56, 55, 55, 0.1);
+}
+
+.setaUp {
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    border: none;
+    top: -16%;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+.balao {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(358.25deg, rgba(229, 229, 229, 0.68) 19.64%, #FFFFFF 75.78%);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.topoBalao {
+    display: flex;
+    justify-content: start;
+    padding: 10px;
+    flex-direction: column;
+    font-family: Comfortaa, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 145%;
+    color: #000000;
+    gap: 0.3rem;
+}
+
+.emailLogado {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+
+.setaSair {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem;
+    top: 28%;
+    
+
+}
+.setaSair span{
+    font-family: Comfortaa,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 145%;
+    color: #000000;
+    cursor:pointer;
+}
+.setaSair img{
+    cursor: pointer;
+}
+.setaSair img:hover{
+    transform: scale(1.09);
+}
+.setaSair span:hover{
+    transform: scale(1.06);
+}
+

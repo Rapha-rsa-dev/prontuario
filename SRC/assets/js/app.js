@@ -36,8 +36,26 @@ const btnConfirm = document.querySelector('#cadasroConfirm');
 const modDelete = document.querySelector('.modDelete');
 const btnNoDelete = document.querySelector('.no');
 const btnDelete = document.querySelector('.yes');
+const emailCheck = document.getElementsByClassName('emailInput');
+const sairPopup = document.querySelector('#arrow-down')
+const modalSair = document.querySelector('#popup');
+const sair = document.querySelector("#sair")
 
-fetch(`https://raphadev.onrender.com/login`)
+
+sairPopup.addEventListener("click", e => {
+        modalSair.style.display = 'flex';
+})
+sair.addEventListener("click", e => {
+    modalSair.style.display = 'none';
+    localStorage.removeItem('senhaUser');
+    localStorage.removeItem('emailUser');
+    setTimeout(() => {
+        window.location.href = '/index.html';
+    },1000)
+})
+
+
+const nomeU = fetch(`https://raphadev.onrender.com/login`)
     .then((response) => {
         response.json()
             .then((dados) => {
@@ -45,10 +63,14 @@ fetch(`https://raphadev.onrender.com/login`)
                     console.log(login)
                     if (login) {
                         document.querySelector('#userName').textContent = `${login.nomeUser}`
+                        document.querySelector('.emailLogado').textContent= `${login.emailUser}`
+                        
                     }
+
                 })
             })
     })
+
 
 addNewPaciente.addEventListener('click', addPaciente);
 function addPaciente() {
@@ -56,7 +78,6 @@ function addPaciente() {
     document.querySelector('.cabecalho').style.display = 'none';
     document.querySelector('.contentTable').style.display = 'none';
     document.querySelector('#back').style.backgroundColor = 'rgba(0,0,0,0.4)';
-
 };
 closeCancel.addEventListener('click', function () {
     modConfirm.style.display = "block";
@@ -70,7 +91,6 @@ btnYes.addEventListener("click", function () {
 });
 btnNo.addEventListener("click", function () {
     modConfirm.style.display = "none";
-
 });
 let ValidEmail = function ValidEmail(email) {
     const emailRegex = new RegExp(
@@ -81,6 +101,7 @@ let ValidEmail = function ValidEmail(email) {
     };
     return false;
 };
+
 async function newPacient(paciente) {
     return fetch('https://raphadev.onrender.com/pacientes', {
         method: 'POST',
@@ -91,6 +112,22 @@ async function newPacient(paciente) {
         body: JSON.stringify(paciente),
     });
 };
+    let nomeUser;
+
+    fetch (`https://raphadev.onrender.com/login`).then((response) =>{
+        response.json().then((usuarios) => {
+            usuarios.map((login) => {
+
+                if (login){
+                    nomeUser = `${login.nomeUser}`
+                    console.log(nomeUser)
+                }
+                
+            })
+        })
+    })
+
+
 async function cadastrar() {
     const cpf = cpfInput.value;
     const nome = nameInputPaciente.value;
@@ -108,13 +145,10 @@ async function cadastrar() {
         cpf, nome, dataDeNasc,
         email, genero, nacionalidade,
         naturalidade, profissao, escolaridade,
-        estadoCivil, mae, pai, idMedico: nomeUser
+        estadoCivil, mae, pai, idMedico:nomeUser
     };
     await newPacient(dadosPaciente);
 };
-
-
-//se localizando no codigo
 
 cpfInput.addEventListener('input', () => {
     let numeroCPF = cpfInput.value;
@@ -310,8 +344,7 @@ btnSend.addEventListener('click', (event) => {
         document.querySelector('#back').style.backgroundColor = '#E5E5E5';
         return
     } else {
-        console.log("Por favor, corrija os erros no formulário.");
-        return
+        return;
     };
 });
 enviarForm.addEventListener('DOMContentLoaded', function () {
@@ -324,7 +357,7 @@ enviarForm.addEventListener('DOMContentLoaded', function () {
 });
 function viwerPaciente() {
 
-
+    //ainda vou fazer
 };
 function editarPaciente() {
     modalPaciente.style.display = 'flex';
@@ -376,13 +409,13 @@ const medicoLogado = {
 fetch('https://raphadev.onrender.com/pacientes')
     .then(response => response.json())
     .then(data => {
-        fetch('https://raphadev.onrender.com/medicos')
+        fetch('https://raphadev.onrender.com/login')
             .then(response => response.json())
             .then(medicosData => {
                 const idMedico = medicoLogado.id;
                 const medico = medicosData.find(medico => medico.id === idMedico);
                 const pacientes = data.filter(paciente => paciente.idMedico && paciente.idMedico === medico.id);
-                // console.log(`Pacientes do médico ${medico.nome}:`, pacientes);
+                console.log(`Pacientes do médico ${medico.idMedico}:`, pacientes);
             });
     });
 function exibirPaginacao(pacientes) {
@@ -429,11 +462,3 @@ btnDelete.addEventListener('click', async () => {
     }, 1500);
 });
 carregarDados();
-
-
-
-
-
-
-
-
