@@ -37,35 +37,33 @@ const modDelete = document.querySelector('.modDelete');
 const btnNoDelete = document.querySelector('.no');
 const btnDelete = document.querySelector('.yes');
 
-
-
-
-
-fetch(`https://raphadev.onrender.com/login/${nomeUser}`)
-    .then(response => response.json())
-    .then(data => {
-        const user = data.login ? data.login : data;
-        if (user) {
-            document.querySelector('#userName').textContent = `${user.nomeUser}`;
-        }
-    });
-
+fetch(`https://raphadev.onrender.com/login`)
+    .then((response) => {
+        response.json()
+            .then((dados) => {
+                dados.map((login) => {
+                    console.log(login)
+                    if (login) {
+                        document.querySelector('#userName').textContent = `${login.nomeUser}`
+                    }
+                })
+            })
+    })
 
 addNewPaciente.addEventListener('click', addPaciente);
 function addPaciente() {
     modalPaciente.style.display = 'flex';
     document.querySelector('.cabecalho').style.display = 'none';
     document.querySelector('.contentTable').style.display = 'none';
-    document.querySelector('#back').style.backgroundColor = 'rgba(0,0,0,0.4)'
+    document.querySelector('#back').style.backgroundColor = 'rgba(0,0,0,0.4)';
 
 };
 closeCancel.addEventListener('click', function () {
     modConfirm.style.display = "block";
-})
+});
 fecharModalPaciente.addEventListener('click', function () {
     modConfirm.style.display = "block";
-})
-
+});
 btnYes.addEventListener("click", function () {
     modConfirm.style.display = "none";
     location.reload();
@@ -74,11 +72,7 @@ btnNo.addEventListener("click", function () {
     modConfirm.style.display = "none";
 
 });
-
-
-
 let ValidEmail = function ValidEmail(email) {
-
     const emailRegex = new RegExp(
         /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     );
@@ -87,21 +81,17 @@ let ValidEmail = function ValidEmail(email) {
     };
     return false;
 };
-
 async function newPacient(paciente) {
     return fetch('https://raphadev.onrender.com/pacientes', {
         method: 'POST',
         headers: {
-
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         },
         body: JSON.stringify(paciente),
     });
 };
-
 async function cadastrar() {
-
     const cpf = cpfInput.value;
     const nome = nameInputPaciente.value;
     const dataDeNasc = dataDeNascInput.value;
@@ -114,33 +104,25 @@ async function cadastrar() {
     const estadoCivil = estadoCivilInput.value;
     const mae = maeInput.value;
     const pai = paiInput.value;
-
-
     const dadosPaciente = {
         cpf, nome, dataDeNasc,
         email, genero, nacionalidade,
         naturalidade, profissao, escolaridade,
-        estadoCivil, mae, pai, idMedico: nome
-
+        estadoCivil, mae, pai, idMedico: nomeUser
     };
-
     await newPacient(dadosPaciente);
-
 };
 
 
 //se localizando no codigo
 
 cpfInput.addEventListener('input', () => {
-
     let numeroCPF = cpfInput.value;
     let tem11numeros = numeroCPF.length >= 11;
     let numero = cpfInput.value.replace(/\D/g, "");
     numero = numero.slice(0, 11);
     numero = numero.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-
     cpfInput.value = numero;
-
     if (tem11numeros) {
         erroCpf.innerText = 'CPF';
         erroCpf.style.color = '#4F4F4F';
@@ -149,27 +131,21 @@ cpfInput.addEventListener('input', () => {
 });
 
 nameInputPaciente.addEventListener('input', function () {
-
     let nomeTamanho = nameInputPaciente.value;
     let tem5Digitos = nomeTamanho.length >= 2;
-
     if (tem5Digitos) {
         erroNome.innerText = 'Nome';
         erroNome.style.color = '#4F4F4F';
         return;
     };
-
 });
-
 emailInputPaciente.addEventListener('input', function () {
-
     let emailValid = emailInputPaciente.value;
     let checkEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-
     if (checkEmail.test(emailValid)) {
         erroEmail.innerText = 'Email';
         erroEmail.style.color = '#4F4F4F';
-        ;
+
     } else {
         erroEmail.innerText = 'Digite um Email valido';
         erroEmail.style.color = '#e90505';
@@ -177,15 +153,12 @@ emailInputPaciente.addEventListener('input', function () {
     };
 });
 dataDeNascInput.addEventListener('input', () => {
-
     let diaMesAno = dataDeNascInput.value;
     let tem8numeros = diaMesAno.length >= 8;
     let formatData = dataDeNascInput.value.replace(/\D/g, "");
     formatData = formatData.slice(0, 8);
     formatData = formatData.replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3");
-
     dataDeNascInput.value = formatData;
-
     if (tem8numeros) {
         erroData.innerText = 'Data de Nascimento';
         erroData.style.color = '#4F4F4F';
@@ -207,40 +180,31 @@ nacionalidadeInput.addEventListener('change', function () {
     };
 });
 naturalidadeInput.addEventListener('input', function () {
-
     let naturalTamanho = naturalidadeInput.value;
     let temUmaCidade = naturalTamanho.length >= 2;
-
     if (temUmaCidade) {
         erroNaturalidade.innerText = 'Naturalidade';
         erroNaturalidade.style.color = '#4F4F4F';
         return;
     };
-
 });
 profissaoInput.addEventListener('input', function () {
-
     let profissaoTamanho = profissaoInput.value;
     let temUmJob = profissaoTamanho.length >= 2;
-
     if (temUmJob) {
         erroProfissao.innerText = 'Profissão';
         erroProfissao.style.color = '#4F4F4F';
         return;
     };
-
 });
 escolaridadeInput.addEventListener('input', function () {
-
     let nivelescolar = escolaridadeInput.value;
     let tamanhoEscolar = nivelescolar.length >= 2;
-
     if (tamanhoEscolar) {
         erroEscolaridade.innerText = 'Escolaridade';
         erroEscolaridade.style.color = '#4F4F4F';
         return;
     };
-
 });
 estadoCivilInput.addEventListener('change', function () {
     if (estadoCivilInput.checkValidity()) {
@@ -250,7 +214,6 @@ estadoCivilInput.addEventListener('change', function () {
     };
 });
 maeInput.addEventListener('input', function () {
-
     let nomeDamae = maeInput.value;
     let tamanhoMae = nomeDamae.length >= 2;
 
@@ -259,33 +222,23 @@ maeInput.addEventListener('input', function () {
         erroMae.style.color = '#4F4F4F';
         return;
     };
-
 });
 paiInput.addEventListener('input', function () {
-
     let nomeDoPai = paiInput.value;
     let tamanhoPai = nomeDoPai.length >= 2;
-
     if (tamanhoPai) {
         erroPai.innerText = 'Pai';
         erroPai.style.color = '#4F4F4F';
         return;
     };
-
 });
-
-
-
 btnSend.addEventListener('click', (event) => {
     event.preventDefault();
-
-
     if (cpfInput.value === "") {
         erroCpf.innerText = 'Preencha o CPF';
         erroCpf.style.color = '#e90505';
         return;
     };
-
     if (nameInputPaciente.value === "") {
         erroNome.innerText = 'Preencha o nome ';
         erroNome.style.color = '#e90505';
@@ -297,7 +250,6 @@ btnSend.addEventListener('click', (event) => {
         erroData.style.color = '#e90505';
         return;
     };
-
     if (emailInputPaciente.value === "" || !ValidEmail(emailInputPaciente.value)) {
         erroEmail.innerText = 'Digite um email valido';
         erroEmail.style.color = '#e90505';
@@ -307,7 +259,7 @@ btnSend.addEventListener('click', (event) => {
         erroGenero.innerText = 'Selecione o gênero';
         erroGenero.style.color = '#e90505';
         return;
-    }
+    };
     if (naturalidadeInput.value === "") {
         erroNaturalidade.innerText = 'Digite o local de Nascimento';
         erroNaturalidade.style.color = '#e90505';
@@ -343,16 +295,13 @@ btnSend.addEventListener('click', (event) => {
         erroPai.style.color = '#e90505';
         return;
     };
-
     btnConfirm.addEventListener('click', function () {
         modalSucess.style.display = 'none';
         document.querySelector('.cabecalho').style.display = 'block';
         document.querySelector('.contentTable').style.display = 'flex';
         document.querySelector('#back').style.backgroundColor = '#E5E5E5';
-        location.reload()
-
-    })
-
+        location.reload();
+    });
     if (cadastrar()) {
         modalPaciente.style.display = 'none';
         modalSucess.style.display = 'flex'
@@ -360,38 +309,29 @@ btnSend.addEventListener('click', (event) => {
         document.querySelector('.contentTable').style.display = 'flex';
         document.querySelector('#back').style.backgroundColor = '#E5E5E5';
         return
-
     } else {
         console.log("Por favor, corrija os erros no formulário.");
         return
-    }
-
+    };
 });
-
 enviarForm.addEventListener('DOMContentLoaded', function () {
     const enviarForm = document.querySelector('.sendForm');
     setTimeout(function () {
         enviarForm.submit();
         return;
     }, 2000);
-    return
+    return;
 });
-
-
 function viwerPaciente() {
 
 
-
-}
-
-
+};
 function editarPaciente() {
     modalPaciente.style.display = 'flex';
     document.querySelector('.paceiteTitulotext').innerText = 'Dados do Paciente';
     document.querySelector('.send').style.display = 'none';
     document.querySelector('#editar').style.display = 'block';
-
-}
+};
 const btnEditar = document.querySelector('#editar');
 btnEditar.addEventListener('click', function () {
     modalPaciente.style.display = 'flex';
@@ -399,71 +339,40 @@ btnEditar.addEventListener('click', function () {
     document.querySelector('.send').style.display = 'flex';
     btnSend.innerText = 'Salvar alterações';
     document.querySelector('#editar').style.display = 'flex';
-
-})
-
+});
 function deletarPacient() {
-
     modDelete.style.display = 'block';
     document.querySelector('#text6').innerText = 'Essa ação é irreversivel';
     document.querySelector('#text7').innerText = 'Tem certeza que deseja continuar';
-
-
-
-
-}
-
-
-
+};
 const pacientesPorPagina = 6;
 let paginaAtual = 1;
-
 function exibirPacientes(pacientes) {
     const divPai = document.querySelector('.dadostabela');
     divPai.innerHTML = "";
-
     const startIndex = (paginaAtual - 1) * pacientesPorPagina;
     const endIndex = startIndex + pacientesPorPagina;
-
-
     pacientes.slice(startIndex, endIndex).forEach(paciente => {
         const divPaciente = document.createElement('tbody');
         divPaciente.classList.add('dadostabela');
-
-
-
-
-
         divPaciente.innerHTML = `
-    
         <td>
         <td id="codigoUser">${paciente.id}</td>
         <td id="nomeUser1">${paciente.nome}</td>
         <td id="cpfUser">${paciente.cpf}</td>
         <td id="iconn">
-            
         <i onclick="viwerPaciente()" class="fa-sharp fa-solid fa-clipboard-list" id="clipboard"></i>
         <i onclick="editarPaciente()" class="fa-sharp fa-solid fa-pen-line" id="penLine"><img
                 src="./SRC/assets/img/pen_line.svg" alt=""></i>
         <i onclick="deletarPacient()" class="fa-solid fa-trash-can" id="trash"></i>
-            
         </td>
-    
-    `;
-
-
-
+        `;
         divPai.appendChild(divPaciente);
-
     });
-}
-
+};
 const medicoLogado = {
     id: 1
-    
-}
-
-
+};
 fetch('https://raphadev.onrender.com/pacientes')
     .then(response => response.json())
     .then(data => {
@@ -472,65 +381,46 @@ fetch('https://raphadev.onrender.com/pacientes')
             .then(medicosData => {
                 const idMedico = medicoLogado.id;
                 const medico = medicosData.find(medico => medico.id === idMedico);
-
                 const pacientes = data.filter(paciente => paciente.idMedico && paciente.idMedico === medico.id);
-
-                console.log(`Pacientes do médico ${medico.nome}:`, pacientes);
+                // console.log(`Pacientes do médico ${medico.nome}:`, pacientes);
             });
     });
-
-
-
-
 function exibirPaginacao(pacientes) {
     const numPaginas = Math.ceil(pacientes.length / pacientesPorPagina);
-
     const divPaginacao = document.getElementById('pagination');
     divPaginacao.innerHTML = "";
-
     for (let i = 1; i <= numPaginas; i++) {
         const botaoPagina = document.createElement('button');
         botaoPagina.innerText = i;
         if (i === paginaAtual) {
             botaoPagina.classList.add('active');
-        }
+        };
         botaoPagina.addEventListener('click', () => {
             paginaAtual = i;
             exibirPacientes(pacientes);
             exibirPaginacao(pacientes);
         });
         divPaginacao.appendChild(botaoPagina);
-    }
-}
-
+    };
+};
 async function carregarPacientes() {
     const response = await fetch('https://raphadev.onrender.com/pacientes');
     const pacientes = await response.json();
-
     exibirPacientes(pacientes);
     exibirPaginacao(pacientes);
-}
-
+};
 carregarPacientes();
-
-
 const apiURL = 'https://raphadev.onrender.com/pacientes';
-
-
 async function carregarDados() {
     const response = await fetch(apiURL);
     const pacientes = await response.json();
-
-
     btnDelete.setAttribute('data-id', pacientes[0].id);
-}
-
+};
 async function deletarDados(id) {
     await fetch(apiURL + `/${id}`, {
         method: 'DELETE'
     });
-}
-
+};
 btnDelete.addEventListener('click', async () => {
     const idPaciente = btnDelete.dataset.id;
     await deletarDados(idPaciente);
@@ -538,7 +428,6 @@ btnDelete.addEventListener('click', async () => {
         document.location.reload();
     }, 1500);
 });
-
 carregarDados();
 
 

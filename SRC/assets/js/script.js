@@ -5,9 +5,8 @@ const continueCadastro = document.querySelector('#continue');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#senha');
 const modal = document.querySelector('#modal');
-const modalEdit = document.querySelector('#editModal')
+const modalEdit = document.querySelector('#editModal');
 const mostrarSenhaBtn = document.querySelector('#ocultar');
-
 
 mostrarSenhaBtn.addEventListener('click', () => {
   if (passwordInput.type === 'password') {
@@ -16,32 +15,23 @@ mostrarSenhaBtn.addEventListener('click', () => {
   } else {
     passwordInput.type = 'password';
     mostrarSenhaBtn.textContent = 'Mostrar';
-  }
+  };
 });
-
 btncdastreSe.addEventListener("click", cadastro);
-
 function cadastro() {
   cadastreSe.style.display = 'none';
   subscrever.style.display = 'flex';
 };
-
 let fecharModal = function fecharModal() {
   modal.style.display = 'none';
-  
-}
+};
 let isValidPassword = function isValidPassword(passwordInput2, passwordInput3) {
   if (passwordInput2 === passwordInput3) {
-
     return true;
-  }
-
+  };
   return false;
-
-}
-
+};
 let isValidEmail = function isValidEmail(email) {
-
   const emailRegex = new RegExp(
     /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   );
@@ -50,80 +40,74 @@ let isValidEmail = function isValidEmail(email) {
   };
   return false;
 };
-
 let validarSenha = function validarSenha(senha) {
-
   if (senha.length < 8) {
     return false;
-  }
-
+  };
   let contemMaiuscula = false;
   let contemEspecial = false;
   let especiais = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-
   for (let i = 0; i < senha.length; i++) {
     let caractere = senha.charAt(i);
-
     if (caractere >= 'A' && caractere <= 'Z') {
       contemMaiuscula = true;
-
     } else if (especiais.test(caractere)) {
       contemEspecial = true;
-    }
-  }
+    };
+  };
   if (!contemMaiuscula || !contemEspecial) {
     return false;
-  }
-
+  };
   return true;
-}
+};
 
-
-formulario.addEventListener("submit",  async (event) => {
+formulario.addEventListener("submit", async (event) => {
   event.preventDefault();
-
   if (emailInput.value === "" || !isValidEmail(emailInput.value)) {
     modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Ops! Digite um e-mail valido.</p>'
+    modalEdit.innerHTML = '<p> Ops! Digite um e-mail valido.</p>';
     modal.addEventListener('click', fecharModal);
     return;
-
-  }
+  };
   if (!validarSenha(passwordInput.value, 8)) {
     modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>'
+    modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
     modal.addEventListener('click', fecharModal);
     return;
-  }
-  
-  
+  };
   const response = await fetch('https://raphadev.onrender.com/login');
-if (response.ok) {
-  const data = await response.json();
-  const email = emailInput.value;
-  const senha = passwordInput.value;
-  localStorage.setItem("emailUser", email)
-  localStorage.setItem("senhaUser", senha)
-  const user = data.find(user => user.emailUser === email && user.senhaUser === senha);
-  if (user) {
-    formulario.style.display = 'none';
-    formCadastro.style.display = 'none';
-    modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Bem vindo(a)! </p>'
-    modal.addEventListener('click', fecharModal);
-    setTimeout(function () {
-      window.location.href = '/prontuario.html'      
-    }, 2300);      
-  } else {
-    modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Ops! Email ou Senha inválidos, tente novamente. </p>'
-    modal.addEventListener('click', fecharModal);    
-  }
-}  
+  if (response.ok) {
+    const data = await response.json();
+    const email = emailInput.value;
+    const senha = passwordInput.value
+   
+    const user = data.find(user => user.emailUser === email && user.senhaUser === senha )
+    
+    localStorage.setItem("emailUser", email);
+    localStorage.setItem("senhaUser", senha);
+    
+    if (user) {
+      formulario.style.display = 'none';
+      formCadastro.style.display = 'none';
+      modal.style.display = 'block';
+      modalEdit.innerHTML = '<p> Bem vindo(a)! </p>';
+      modal.addEventListener('click', fecharModal);
+      setTimeout(function () {
+        window.location.href = '/prontuario.html'
+      }, 2300);
+    } else {
+      modal.style.display = 'block';
+      modalEdit.innerHTML = '<p> Ops! Email ou Senha inválidos, tente novamente. </p>';
+      modal.addEventListener('click', fecharModal);
+    };
+   
+  };
 });
 
+
+
 //tela cadastro
-const formCadastro = document.querySelector('.conteiner-login2')
+const formCadastro = document.querySelector('.conteiner-login2');
 const nameInput = document.querySelector('#name1');
 const emailInput1 = document.querySelector('#email1');
 const btnProsseguir = document.querySelector('.nexxt');
@@ -143,31 +127,26 @@ function checkEmail(email) {
     .then(data => {
       const usuarios = data.login ? data.login : data;
       const usuarioEncontrado = usuarios.find(usuario => usuario.emailUser === email);
-      return !!usuarioEncontrado; 
+      return !!usuarioEncontrado;
     })
     .catch(error => {
       console.error(error);
       return false;
     });
-
-  }
-
-btnProsseguir.addEventListener('click', async function seguir(){
+};
+btnProsseguir.addEventListener('click', async function seguir() {
   if (nameInput.value === "") {
     modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Ops! Digite seu nome.</p>'
+    modalEdit.innerHTML = '<p> Ops! Digite seu nome.</p>';
     modal.addEventListener('click', fecharModal);
     return;
-  }
-
+  };
   if (emailInput1.value === "" || !isValidEmail(emailInput1.value)) {
     modal.style.display = 'block';
-    modalEdit.innerHTML = '<p> Ops! Digite um e-mail valido.</p>'
+    modalEdit.innerHTML = '<p> Ops! Digite um e-mail valido.</p>';
     modal.addEventListener('click', fecharModal);
     return;
-  }
- 
-
+  };
   const emailJaCadastrado = await checkEmail(emailInput1.value);
   if (emailJaCadastrado) {
     modal.style.display = 'block';
@@ -177,65 +156,64 @@ btnProsseguir.addEventListener('click', async function seguir(){
       location.reload();
     }, 1000);
     return;
-  }
-  
-
+  };
   subscrever.style.display = 'none';
   continueCadastro.style.display = 'flex';
-})
-
+});
 formCadastro.addEventListener('submit', (event) => {
   event.preventDefault();
-
   if (!validarSenha(passwordInput2.value, 8)) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! A sua senha deve conter no minimo 8 digitos, um caracter especial e uma letra maiúscula.</p>';
     modal.addEventListener('click', fecharModal);
     return;
-  }
+  };
   if (!validarSenha(passwordInput3.value, 8)) {
     modal.style.display = 'block';
     modalEdit.innerHTML = '<p> Ops! Repita a sua senha.</p>';
     modal.addEventListener('click', fecharModal);
     return;
-  }
+  };
   async function listerUser(users) {
     return fetch('https://raphadev.onrender.com/login', {
       method: 'POST',
       headers: {
-
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
       body: JSON.stringify(users),
     });
-  }
-  
-  async function listar() {
+  };
 
+  async function listar() {
     const nomeUser = nameInput.value;
     const emailUser = emailInput1.value;
     const senhaUser = passwordInput2.value;
-    const validatePass = passwordInput3.value;
-    
+
+    function generateId() {
+      return Math.random().toString(36).substring(2, 8);
+    }
+
+    let idPsicologo = generateId();
 
     const dadosUser = {
       nomeUser,
       emailUser,
-      senhaUser
+      senhaUser,
+      idPsicologo,
 
     };
-    
+
+    let id = sessionStorage.getItem('idPsicologo');
+    if (!id) {
+      id = generateId();
+      sessionStorage.setItem('idPsicologo', id);
+    }
 
     await listerUser(dadosUser);
-    const nome = nameInput.value;
-localStorage.setItem("nomeUser", nome);
-
   };
-  
- 
-  
-  
+
+
   finalizar.addEventListener('click', (e) => {
     e.preventDefault();
     if (passwordInput2.value !== passwordInput3.value) {
@@ -243,7 +221,7 @@ localStorage.setItem("nomeUser", nome);
       modalEdit.innerHTML = '<p>As senhas inseridas são diferentes.</p>';
       modal.addEventListener('click', fecharModal);
       return;
-    }
+    };
     if (listar()) {
       modal.style.display = 'block';
       modalEdit.innerHTML = '<p> Cadastro realizado com sucesso.</p>';
@@ -251,36 +229,30 @@ localStorage.setItem("nomeUser", nome);
       setTimeout(function () {
         formCadastro.submit();
       }, 2000);
-    } 
+    };
   });
-
 })
-
 passwordInput2.addEventListener('input', function () {
   const senha = passwordInput2.value;
   const temPeloMenos8Caracteres = senha.length >= 8;
   const temPeloMenosUmCaractere = /["'!@#$%¨&*()_+-=><;:][^0-9]/.test(senha);
   const temPeloMenosUmaMaiuscula = /[A-Z]/.test(senha);
-
   if (temPeloMenosUmCaractere) {
     requisito2.style.color = 'green';
   } else {
     requisito2.style.color = 'red';
-  }
-
+  };
   if (temPeloMenos8Caracteres) {
     requisito1.style.color = 'green';
   } else {
     requisito1.style.color = 'red';
-  }
-
+  };
   if (temPeloMenosUmaMaiuscula) {
     requisito3.style.color = 'green';
   } else {
     requisito3.style.color = 'red';
-  }
+  };
 });
-
 mostrarSenhaBtn2.addEventListener('click', () => {
   if (passwordInput2.type === 'password') {
     passwordInput2.type = 'text';
@@ -288,7 +260,7 @@ mostrarSenhaBtn2.addEventListener('click', () => {
   } else {
     passwordInput2.type = 'password';
     mostrarSenhaBtn2.textContent = 'Mostrar';
-  }
+  };
 });
 mostrarSenhaBtn3.addEventListener('click', () => {
   if (passwordInput3.type === 'password') {
@@ -297,5 +269,5 @@ mostrarSenhaBtn3.addEventListener('click', () => {
   } else {
     passwordInput3.type = 'password';
     mostrarSenhaBtn3.textContent = 'Mostrar';
-  }
-})
+  };
+});
