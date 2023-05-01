@@ -661,6 +661,30 @@ body {
 .buttonNewPacient:hover {
     transform: scale(1.02);
 }
+.pacientes{
+    margin-left: 18px; 
+    width: 20.5%;
+    background-color: #E0E0E0;
+    position: absolute;
+    padding-left: 10px;
+    z-index: 1;
+    opacity: 80%;
+    display: none;
+    border-bottom-left-radius: 8px;
+     border-bottom-right-radius: 8px;
+}
+#imgGiff {
+    width: 200px;
+    position: absolute;
+    top: 10%;
+    z-index: -1;
+}
+.searchcontent{
+    flex-direction: column;
+}
+.obrigatorio{
+    display:flex;
+}
 
 .containertabela {
     position: relative;
@@ -902,6 +926,24 @@ th {
     gap: 30px;
     box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.15);
 }
+.modal-paciente1{
+    display: flex;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    max-width: 100%;
+    width: 80%;
+    max-height: 100vh;
+    height: 560px;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 16px;
+    gap: 30px;
+    box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.15);
+}
 
 
 .paceiteTitulo {
@@ -956,10 +998,9 @@ th {
 
 }
 
-.one,
-.two,
-.three,
-.for {
+.one,.one1,
+.two,.two1,
+.three, .three1, .for1,.for {
     position: relative;
     max-width: 100%;
     width: 1000px;
@@ -974,7 +1015,11 @@ th {
 .two input,
 select,
 .three input,
-.for input,
+.for input,.one1 input,
+.two1 input,
+select,
+.three1 input,
+.for1 input,
 select {
     max-width: 100%;
     width: 327px;
@@ -1021,6 +1066,9 @@ select {
     align-items: center;
     gap: 20px;
 
+}
+ #saveEdit{
+   width: 240px; 
 }
 
 .btnsend p {
