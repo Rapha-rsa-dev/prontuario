@@ -719,9 +719,15 @@ const verMais  = document.querySelector('.text13');
 
 verMais.addEventListener('click', function(){
     verCard.style.display = 'flex';
+    cardFactor.style.display = 'none';
+    cardSection.style.display = 'none';
+    cardSection2.style.display= 'none';
 });
 sairCardSessao.addEventListener('click', function(){
     verCard.style.display = 'none';
+    cardFactor.style.display = 'flex';
+    cardSection.style.display = 'flex';
+    cardSection2.style.display= 'flex';
 });
 
 
