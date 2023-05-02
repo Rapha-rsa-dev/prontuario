@@ -18,8 +18,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./SRC/assets/js/app.js" defer></script>
-    <script src="./SRC/assets/js/prontuario.js" defer></script>
-
+   
     <title>Prontuario</title>
 </head>
 
@@ -42,7 +41,7 @@
                             </div>
                             <div class="inputFR">
                                 <label for="titulooo">Titulo*</label>
-                                <input type="text" id="titulooo" placeholder="12:00">
+                                <input type="text" id="titulooo" placeholder="Digite">
                             </div>
                         </div>
                         <div class="down">
@@ -69,9 +68,6 @@
             </div>
 
         </div>
-
-
-
 
         <div class="modalSectionContent">
             <div class="newsection">
@@ -226,8 +222,9 @@
 
         </div>
 
-
     </div>
+
+
     <div class="main-conteiner" id="main-conteiner">
         <section class="cabecalho" id="cabecalho">
 
@@ -334,7 +331,7 @@
                         <div class="filtro">
                             <span class="sp2">Filtrar por:</span>
                             <span class="sp3">Todos</span>
-                            <img src="./SRC/assets/img/arrowdown.svg" alt="icone de seta">
+                            <img class="filtraSessaoFatos" src="./SRC/assets/img/arrowdown.svg" alt="icone de seta">
                         </div>
                     </div>
                     <div class="cardSection">
@@ -411,6 +408,87 @@
             </div>
 
         </div>
+
+        <div class="modalFiltro">
+            <div class="conteinerFiltro">
+                <div class="todos">
+                    <span>Todos</span>
+                </div>
+                <div class="sessao">
+                    <span>Sessão</span>
+                    <div class="fatoRelevante">
+                        <span>Fato Relevante</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modalDeleteEdit">
+            <div class="editBlue">
+                <img src="./SRC/assets/img/pen_line.svg" alt="lapis de editar">
+                <span>Editar</span>
+            </div>
+            <div class="deleteRed">
+                <img src="./SRC/assets/img/trash.svg" alt="lixeira de deletar">
+                <span>Excluir</span>
+            </div>
+        </div>
+        <div class="telaFinal">
+            <div class="barraVoltar">
+                <div class="voltar">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <span>Voltar</span>
+                </div>
+            </div>
+            <div class="imgSec">
+                <Span>Sessão</Span>
+            </div>
+            <div class="contei">
+                <div class="topocard">
+                    <div class="cabecalhocard">
+                        <div>
+                            <span>Sessão 02</span>
+                        </div>
+                        <div>
+                            <img src="./SRC/assets/img/fundoblue.svg" alt="">
+                            <img src="./SRC/assets/img/fundored.svg" alt="">
+                        </div>
+                    </div>
+                    <span class="date">22 de abril de 2023 | 16:00 : 17:00</span>
+                    <div class="paragraph">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem reprehenderit id totam
+                            soluta. Repudiandae quis, veniam mollitia nihil numquam quibusdam et beatae aliquam, 
+                            maiores, deserunt at! Porro,<br> beatae perspiciatis. Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Doloremque accusamus natus quasi rem ex impedit exercitationem pariatur
+                            maiores nam laudantium? Assumenda, inventore delectus quos ad enim molestiae ex. Labore,
+                            possimus.
+                        </p>
+                    </div>
+                    <spam class="pay">Pagamento</spam>
+                    <div class="payment">
+                        <div class="valor">
+                            <span>Valor</span>
+                            <span>R$ 200,00</span>
+                        </div>
+                        <div class="metod">
+                            <span>Metodo de Pagamento</span>
+                            <span>PIX</span>
+                        </div>
+                        <div class="stat">
+                            <span>Status</span>
+                            <span>Pago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
         <section class="contentTable" id="contentTable">
             <div class="textPaciente">
                 <p class="text4">Meus pacientes</p>

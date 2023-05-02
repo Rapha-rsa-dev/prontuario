@@ -1739,9 +1739,9 @@ select {
 .modalSection {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 1190px;
     max-width: 100%;
-    max-height: 100vh;
+
     background-color: rgba(0, 0, 0, 0.655);
     z-index: 9999;
     display: none;
@@ -1751,7 +1751,7 @@ select {
 .modalSectionContent {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 33%;
     transform: translate(-50%, -50%);
     max-width: 100%;
     max-height: 100vh;
@@ -2061,7 +2061,8 @@ select {
     gap: 1.1rem
 }
 
-.createSection button, .btnCreateFactor {
+.createSection button,
+.btnCreateFactor {
     width: 150px;
     height: 48px;
     border-radius: 12px;
@@ -2098,7 +2099,7 @@ select {
 .modalfatorRelevante {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 30%;
     transform: translate(-50%, -50%);
     background-color: #FFFFFF;
     border-radius: 8px;
@@ -2156,11 +2157,13 @@ select {
     gap: 2rem;
 
 }
-.inputFR{
+
+.inputFR {
     width: 100%;
     gap: 0.5rem;
 }
-.down label{
+
+.down label {
     position: relative;
     bottom: 15px;
     left: 3px;
@@ -2201,8 +2204,7 @@ select {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:0.6rem
-
+    gap: 0.6rem
 }
 
 #area {
@@ -2215,7 +2217,8 @@ select {
     padding: 15px;
 
 }
-.footerFator{
+
+.footerFator {
     width: 100%;
     border-top: 2px solid #E5E5E5;
     height: 110px;
@@ -2223,9 +2226,322 @@ select {
     justify-content: center;
     align-items: center;
 }
-.criarFatoRel{
+
+.criarFatoRel {
     display: flex;
     width: 90%;
     justify-content: space-between;
     align-items: center;
+}
+
+.modalFiltro {
+    width: 220px;
+    height: 174px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0px 8px 8px;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    left: 77%;
+    top: 59%
+}
+
+.conteinerFiltro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+
+}
+
+.todos {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    background: #C5F2E0;
+    border-radius: 8px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.sessao {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 35px
+}
+
+.fatoRelevante {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    width: 100%;
+
+}
+
+.todos span {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    align-items: center;
+    color: #00995D;
+    margin-left: 25px;
+}
+
+.sessao span,
+.fatoRelevante span {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 170%;
+    display: flex;
+    align-items: center;
+    color: #424242;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.modalDeleteEdit {
+    width: 172px;
+    height: 123px;
+    position: absolute;
+    left: 79%;
+    top: 71.5%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+    border-radius: 8px 0px 8px 8px;
+    z-index: 9999;
+    gap: 2rem
+}
+
+.editBlue,
+.deleteRed {
+    width: 100%;
+    position: relative;
+    left: 0x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem
+}
+
+.editBlue img,
+.deleteRed img {
+    width: 22px;
+}
+
+.editBlue span {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+    color: #2F80ED;
+}
+
+.deleteRed span {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+    color: #EB5757;
+}
+
+.telaFinal {
+    width: 100%;
+    position: absolute;
+    max-height: 100vh;
+    height: 100vh;
+    background-color: #E5E5E5;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+}
+
+
+
+.voltar {
+    width: 90%;
+    background-color: #FFFFFF;
+    position: absolute;
+    height: 50px;
+    left: 10%;
+    top: 1px;
+    background: #FFFFFF;
+    border-radius: 16px 0 0 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.voltar span {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #4F4F4F;
+    cursor: pointer;
+}
+
+.voltar i {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.voltar i:hover,
+.voltar:span {
+    transform: scale(1.05);
+}
+
+.contenTop {
+    width: 70%;
+    
+    position: relative;
+    left: 13%;
+    top: 60px;
+    background-color: #017849;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenTop span {
+    margin-left: 15px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    cursor: pointer;
+}
+.contenTop span:hover{
+    transform: scale(2.0);
+}
+.imgSec{
+
+position: absolute;
+left: 14%;
+top: 90px;
+font-family: 'Comfortaa';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 27px;
+display: flex;
+align-items: center;
+color: #4F4F4F;
+
+}
+.contei{
+    position: absolute;
+    top: 150px;
+    left:13%;
+ background: #FFFFFF;
+border: 1px solid #E0E0E0;
+box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+width: 900px;
+height: 380px;
+display: flex;
+justify-content: center;
+}
+.topocard{
+    width: 95%;
+    display: flex;
+     position: absolute;
+    left: 5%;
+    align-items: center;
+    justify-content: center;
+}
+.cabecalhocard{
+    width: 90%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 20px;
+    font-family: Montserrat,sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 22px;
+color: #000000;
+
+}
+.date{
+position: absolute;
+left: 5%;
+top:55px;
+font-family: Montserrat,sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 17px;
+color: #616161;
+}
+.paragraph{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top:95px;
+    
+}
+.paragraph p{
+    margin-left: -10px;
+    width: 90%;
+    font-family: Montserrat,sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 170%;
+color: #424242;
+}
+.pay{
+    position: absolute;
+    left: 5%;
+    top: 250px;
+font-family: Montserrat, sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 20px;
+color: #000000;
+}
+.payment{
+    width: 100%;
+    position: absolute;
+    left:5%;
+    top: 290px;
+    display: flex;
+    align-items: center;
+    gap: 2rem
+}
+.valor,.metod,.stat{
+    display: flex;
+    flex-direction:  column;
+}
+.valor span,.metod span,.stat span{
+    font-family: Montserrat,sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 15px;
+color: #000000;
 }

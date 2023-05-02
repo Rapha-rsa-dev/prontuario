@@ -45,6 +45,7 @@ const cabecalho = document.querySelector('.contentHeader');
 const centro = document.querySelector('.contentTable');
 const modalProntuario = document.querySelector('.prontuario');
 const voltarPacientes = document.querySelector('.text55');
+const modalDeletEdit = document.querySelector('.modalDeleteEdit');
 
 sairPopup.addEventListener("click", e => {
     modalSair.style.display = 'flex';
@@ -707,8 +708,23 @@ const cardFactor = document.querySelector('.cardfatos');
 const modalFato = document.querySelector('.modalfatorRelevante');
 const modalCriarSection = document.querySelector('.modalSectionContent');
 const abrirFatos = document.querySelector('.fatoRel');
-const fecharSection = document.querySelector('#closeSection')
-const cancelModalCriar = document.querySelector('#fecharModalCriar')
+const fecharSection = document.querySelector('#closeSection');
+const cancelModalCriar = document.querySelector('#fecharModalCriar');
+const filtraTodos = document.querySelector('.filtraSessaoFatos');
+const modalFiltros = document.querySelector('.modalFiltro');
+const abrirModalEditDelet =document.querySelector('.spn3');
+const sairCardSessao = document.querySelector('.voltar');
+const verCard = document.querySelector('.telaFinal');
+const verMais  = document.querySelector('.text13');
+
+verMais.addEventListener('click', function(){
+    verCard.style.display = 'flex';
+});
+sairCardSessao.addEventListener('click', function(){
+    verCard.style.display = 'none';
+});
+
+
 
 voltarPacientes.addEventListener('click', function(){
         centro.style.display = 'flex';
@@ -772,3 +788,22 @@ btnCriarfato.addEventListener('click', function(){
     voltarAoTopo.style.display = 'flex';
 });
 
+    
+filtraTodos.addEventListener('click', function(){
+    modalFiltros.style.display = 'flex';
+})
+document.addEventListener('click', function (event) {
+    if (modalFiltros.contains(event.target)) {
+        modalFiltros.style.display = 'none';
+    }
+});
+abrirModalEditDelet.addEventListener('click', function(){
+    modalDeletEdit.style.display = 'flex';
+});
+
+document.addEventListener('click', function (event) {
+    if (modalDeletEdit.contains(event.target)) {
+        modalDeletEdit.style.display = 'none';
+    };
+});
+    
