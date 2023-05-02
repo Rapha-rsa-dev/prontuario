@@ -1527,7 +1527,8 @@ select {
     line-height: 17px;
     color: #212121;
 }
-.filtro{
+
+.filtro {
     width: 180px;
     display: flex;
     justify-content: center;
@@ -1743,7 +1744,7 @@ select {
     max-height: 100vh;
     background-color: rgba(0, 0, 0, 0.655);
     z-index: 9999;
-    display: block;
+    display: none;
 
 }
 
@@ -1758,6 +1759,7 @@ select {
     height: 635px;
     background-color: #FFFFFF;
     border-radius: 8px;
+    display: none;
 
 }
 
@@ -1862,10 +1864,12 @@ select {
     border-radius: 8px;
     padding: 10px;
 }
-#fecharModal{
+
+#fecharModal {
     cursor: pointer;
 }
-#fecharModal:hover{
+
+#fecharModal:hover {
     transform: scale(1.06);
 }
 
@@ -2057,7 +2061,7 @@ select {
     gap: 1.1rem
 }
 
-.createSection button {
+.createSection button, .btnCreateFactor {
     width: 150px;
     height: 48px;
     border-radius: 12px;
@@ -2089,4 +2093,139 @@ select {
 
 .createSection span:hover {
     transform: scale(1.05);
+}
+
+.modalfatorRelevante {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    display: none;
+    justify-content: start;
+    align-items: center;
+    width: 642px;
+    height: 466px;
+    flex-direction: column;
+
+}
+
+.newfactor {
+    position: relative;
+    top: 20px;
+    left: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+
+}
+
+.newfactor span {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #00995D;
+}
+
+.newfactor i {
+    font-size: 18px;
+}
+
+.conteinerFator {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 94%;
+    height: 350px;
+
+}
+
+.inputs5 {
+    position: relative;
+    top: 40px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    width: 94%;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+.inputFR{
+    width: 100%;
+    gap: 0.5rem;
+}
+.down label{
+    position: relative;
+    bottom: 15px;
+    left: 3px;
+}
+
+.up {
+    position: relative;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.4rem
+}
+
+#dataa {
+    box-sizing: border-box;
+    width: 200px;
+    background-color: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+#titulooo {
+    box-sizing: border-box;
+    width: 350px;
+    background-color: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+    padding: 12px;
+
+}
+
+.down {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:0.6rem
+
+}
+
+#area {
+    width: 577px;
+    position: relative;
+    left: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+    padding: 15px;
+
+}
+.footerFator{
+    width: 100%;
+    border-top: 2px solid #E5E5E5;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.criarFatoRel{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
 }

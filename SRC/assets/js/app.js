@@ -695,6 +695,7 @@ const newSection = document.querySelector('.sectionHead')
 const cancelModal = document.querySelector('#fecharModal');
 const closeModalCreate = document.querySelector('.closeCreate');
 const btnCriarSection = document.querySelector('.btnCreateSection');
+const btnCriarfato = document.querySelector('.btnCreateFactor')
 const modalSection = document.querySelector('.modalSection');
 const voltarAoTopo = document.querySelector('.voltaraotopo');
 const openSection = document.querySelector('.sectionHead');
@@ -703,6 +704,11 @@ const filterAll = document.querySelector('.filtrar');
 const cardSection = document.querySelector('.cardSection');
 const cardSection2 = document.querySelector('.cardSection2');
 const cardFactor = document.querySelector('.cardfatos');
+const modalFato = document.querySelector('.modalfatorRelevante');
+const modalCriarSection = document.querySelector('.modalSectionContent');
+const abrirFatos = document.querySelector('.fatoRel');
+const fecharSection = document.querySelector('#closeSection')
+const cancelModalCriar = document.querySelector('#fecharModalCriar')
 
 voltarPacientes.addEventListener('click', function(){
         centro.style.display = 'flex';
@@ -713,21 +719,56 @@ voltarPacientes.addEventListener('click', function(){
     cardSection2.style.display = 'none';
     filterAll.style.display = 'none';
     voltarAoTopo.style.display = 'none';
+    modalFato.style.display = 'none';
+    modalCriarSection.style.display ='none';
 });
 newSection.addEventListener('click', function(){
     modalSection.style.display = 'block';
+    modalCriarSection.style.display = 'block';
+    modalFato.style.display = 'none';
+});
+abrirFatos.addEventListener('click', function(){
+    modalSection.style.display = 'block';
+    modalCriarSection.style.display = 'none';
+    modalFato.style.display = 'flex';
 });
 cancelModal.addEventListener('click', function(){
     modalSection.style.display ='none';
+    modalCriarSection.style.display = 'none';
+    modalFato.style.display ='none';
+});
+cancelModalCriar.addEventListener('click', function(){
+    modalSection.style.display ='none';
+    modalCriarSection.style.display = 'none';
+    modalFato.style.display ='none';
 });
 closeModalCreate.addEventListener('click', function(){
     modalSection.style.display ='none';
+    modalCriarSection.style.display = 'none';
+    modalFato.style.display ='none';
+});
+fecharSection.addEventListener('click', function(){
+    modalSection.style.display ='none';
+    modalCriarSection.style.display = 'none';
+    modalFato.style.display ='none';
 });
 btnCriarSection.addEventListener('click', function(){
     modalSection.style.display ='none';
+    modalCriarSection.style.display ='none';
+    modalFato.style.display ='none';
     cardSection.style.display = 'flex';
     cardFactor.style.display = 'flex';
     cardSection2.style.display = 'flex';
     filterAll.style.display = 'flex';
     voltarAoTopo.style.display = 'flex';
 });
+btnCriarfato.addEventListener('click', function(){
+    modalSection.style.display ='none';
+    modalCriarSection.style.display = 'none';
+    cardSection.style.display = 'flex';
+    cardFactor.style.display = 'flex';
+    cardSection2.style.display = 'flex';
+    filterAll.style.display = 'flex';
+    voltarAoTopo.style.display = 'flex';
+});
+

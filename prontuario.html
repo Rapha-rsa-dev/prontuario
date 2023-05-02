@@ -25,10 +25,58 @@
 
 <body id="back">
     <div class="modalSection">
+
+        <div class="modalfatorRelevante">
+            <div class="newfactor">
+                <span>Novo Fato Relevante</span>
+                <i id="fecharModalCriar" class="fa-sharp fa-circle-xmark"></i>
+            </div>
+            <div class="conteinerFator">
+                <div class="novoFato">
+
+                    <div class="inputs5">
+                        <div class="up">
+                            <div class="inputFR">
+                                <label for="dataa">Data*</label>
+                                <input type="text" id="dataa" placeholder="Digite">
+                            </div>
+                            <div class="inputFR">
+                                <label for="titulooo">Titulo*</label>
+                                <input type="text" id="titulooo" placeholder="12:00">
+                            </div>
+                        </div>
+                        <div class="down">
+                            <div class="inputFR">
+                                <label for="area">Descrição*</label>
+                                <textarea name="descricao" id="area" cols="20" rows="8" placeholder="Text"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="footerFator">
+                <div class="criarFatoRel">
+                    <div class="spnObr">
+                        <span>*Campos obrigatórios</span>
+                    </div>
+                    <div class="createSection">
+                        <span class="closeCreate">Cancelar</span>
+                        <button class="btnCreateFactor">Criar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
         <div class="modalSectionContent">
             <div class="newsection">
                 <span>Nova Sessão</span>
-                <i id="fecharModal" class="fa-solid fa-circle-xmark"></i>
+                <i id="fecharModal" class="fa-duotone fa-circle-xmark"></i>
             </div>
             <div class="scroll">
                 <div class="dadosGerais">
@@ -141,7 +189,7 @@
                         <span>*Campos obrigatórios</span>
                     </div>
                     <div class="createSection">
-                        <span class="closeCreate">Cancelar</span>
+                        <span id="closeSection" class="closeCreate">Cancelar</span>
                         <button class="btnCreateSection">Criar</button>
                     </div>
                 </div>
