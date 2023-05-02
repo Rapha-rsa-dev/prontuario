@@ -18,12 +18,136 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./SRC/assets/js/app.js" defer></script>
-    <script src="./SRC/assets/js/requisicao.js" defer></script>
+    <script src="./SRC/assets/js/prontuario.js" defer></script>
 
     <title>Prontuario</title>
 </head>
 
 <body id="back">
+    <div class="modalSection">
+        <div class="modalSectionContent">
+            <div class="newsection">
+                <span>Nova Sessão</span>
+                <i id="fecharModal" class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <div class="scroll">
+                <div class="dadosGerais">
+                    <div class="topo">
+                        <div class="number">
+                            <span>1</span>
+                        </div>
+                        <div class="titulo">
+                            <span>Dados Gerais</span>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <div class="inputDH">
+                            <label for="dataa">Data*</label>
+                            <input type="text" id="dataa" placeholder="dd/mm/aaaa">
+                        </div>
+                        <div class="inputDH">
+                            <label for="horai">hora de início*</label>
+                            <input type="text" id="horai" placeholder="12:00">
+                        </div>
+                        <div class="inputDH">
+                            <label for="horaf">hora fim*</label>
+                            <input type="text" id="horaf" placeholder="13:00">
+                        </div>
+                    </div>
+                    <div class="linha">
+
+                    </div>
+                </div>
+                <div class="sessao">
+                    <div class="topo">
+                        <div class="number">
+                            <span>2</span>
+                        </div>
+                        <div class="titulo">
+                            <span>Sessão</span>
+                        </div>
+                    </div>
+                    <div class="inputs1">
+                        <div class="inputTT">
+                            <label for="tituloo">Titulo*</label>
+                            <input type="text" id="tituloo" placeholder="Digite">
+                        </div>
+                        <div class="inputTT">
+                            <label for="msg">Resumo da sessão*</label>
+                            <textarea name="descricao" id="msg" cols="10" rows="10" placeholder="Text"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="linha2">
+
+                    </div>
+                </div>
+                <div class="pagamento">
+                    <div class="topo">
+                        <div class="number">
+                            <span>3</span>
+                        </div>
+                        <div class="titulo">
+                            <span>Pagamento</span>
+                        </div>
+                    </div>
+                    <div class="inputs2">
+                        <div class="inputpPP">
+                            <label for=" valor">Valor</label>
+                            <input type="text" id="valor" placeholder="Digite">
+                        </div>
+                        <div class="inputpPP">
+                            <label for="pagamento">Forma de pagamento</label>
+                            <select class="setUp" name="pagamento" id="pagamento">
+                                <option value="pix" selected>PIX</option>
+                                <option value="Cartão">Cartão de Credito</option>
+                                <option value="Debito">Debito</option>
+                                <option value="Dinheiro">Dinheiro</option>
+                            </select>
+                        </div>
+                        <div class="status">
+
+                            <div class="radio">
+                                <label for="msg">Status</label>
+                                <div class="dois">
+                                    <div class="inpupRadio">
+                                        <input type="radio" name="pagamento" value="1">
+                                        <span>Pago</span>
+                                    </div>
+
+                                    <div class="inpupRadio">
+                                        <input type="radio" name="pagamento" value="2">
+                                        <span>Não Pago</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="dica">
+                        <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+                        <span><strong>Dica:</strong> os pagamentos das sessóes irá te <br>auxiliar na sua organização
+                            financeira.</span>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer">
+                <div class="criarSection">
+                    <div class="spnObr">
+                        <span>*Campos obrigatórios</span>
+                    </div>
+                    <div class="createSection">
+                        <span class="closeCreate">Cancelar</span>
+                        <button class="btnCreateSection">Criar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modDelete">
         <div class="modedit2">
@@ -46,7 +170,7 @@
     <div class="mod">
         <div class="modedit">
             <p id="text6"> Ao sair todas as informções serão perdidas.</p>
-            <p id="text7">Tem certeza que dejeja sair?</p>
+            <p id="text7">Tem certeza que deseja sair?</p>
             <div class="confirm">
                 <button class="Yes">Sim</button>
                 <button class="No">Não</button>
@@ -61,11 +185,17 @@
 
             <div class="header">
                 <header>
+
                     <div class="logoCabecalho" id="logoCabecalho">
                         <img src="./SRC/assets/img/logo3.svg" alt="icone logo">
                     </div>
+                    <div class="voltarList">
+                        <p class="text55">Voltar para listagem</p>
+                    </div>
                     <div class="contentHeader" id="contentHeader">
+
                         <div class="userContent">
+
                             <span>Bem vindo(a),</span>
                             <span class="userName" id="userName"></span>
                             <i class="fa-sharp fa-solid fa-caret-down" id="arrow-down"></i>
@@ -88,7 +218,151 @@
                 </div>
             </div>
         </section>
+        <div class="prontuario">
+            <div class="findAndText">
+                <p class="text4">Prontuário</p>
+                <div class="searchcontent">
+                    <div class="search" id="search">
+                        <input type="search" placeholder="Pesquisar" class="search">
+                        <div class="filter" id="filter">
+                            <button class="filterUser"><i class="fa-solid fa-magnifying-glass"></i>
+                                Filtrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="conteinerGrid">
+                <div class="dadosPac">
+                    <div class="interna">
+                        <div class="infoPaciente">
+                            <p class="text8">Identificação do paciente</p>
+                        </div>
+                        <div class="infoPaciente">
+                            <div class="pac">
+                                <img src="./SRC/assets/img/paciente.svg" alt="icone paciente">
+                                <p class="text9">Pacitente</p>
+                            </div>
+                            <span class="sp1">Paciente dos santos</span>
+                        </div>
+                        <div class="infoPaciente">
+                            <div class="pac">
+                                <img src="./SRC/assets/img/nascimento.svg" alt="icone calendário">
+                                <p class="text9">Nascimento</p>
+                            </div>
+                            <span class="sp1">12/12/1999</span>
+                        </div>
+                        <div class="infoPaciente">
+                            <div class="pac">
+                                <img src="./SRC/assets/img/job.png" alt="icone profissão">
+                                <p class="text9">Profissão</p>
+                            </div>
+                            <span class="sp1">Lenhador</span>
+                        </div>
+                        <div class="infoPaciente">
+                            <div class="pac">
+                                <img src="./SRC/assets/img/scholl.png" alt="icone profissão">
+                                <p class="text9">Escolaridades</p>
+                            </div>
+                            <span class="sp1">Ler figura</span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="lateral">
+                    <div class="cabecalhoLateral">
+                        <div class="cetralizador">
+                            <div class="sectionHead">
+                                <img id="section" src="./SRC/assets/img/headSection.svg" alt="icone sessão">
+                                <p class="text10">Sessão</p>
+                            </div>
+                            <div class="fatoRel">
+                                <img src="./SRC/assets/img/pin.svg" alt="icone sessão">
+                                <p class="text10">Fatos releantes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filtrar">
+                        <div class="linha"></div>
+                        <div class="filtro">
+                            <span class="sp2">Filtrar por:</span>
+                            <span class="sp3">Todos</span>
+                            <img src="./SRC/assets/img/arrowdown.svg" alt="icone de seta">
+                        </div>
+                    </div>
+                    <div class="cardSection">
+                        <div class="img">
+                            <img src="./SRC/assets/img/Ellipse 239.svg" alt="icone sessão">
+                            <img src="./SRC/assets/img/Vector.svg" alt="icone sessão">
+                        </div>
+                        <div class="titulo1">
+                            <p class="text11">Sessão 02</p>
+                            <span class="spn3">...</span>
+                        </div>
+                        <span class="data">22 de abril de 2023</span>
+                        <div class="caixadetexto">
+                            <p class="text12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eius
+                                praesentium laboriosam dolorum, minus cumque. Praesentium distinctio est, voluptatem
+                                aperiam sed harum non autem fuga qui aut, officia quaerat unde.</p>
+                        </div>
+                        <div class="vermais">
+                            <p class="text13">Ver mais</p>
+                        </div>
+                    </div>
+                    <div class="cardfatos">
+                        <div class="img">
+                            <div class="imgcentral">
+                                <div class="traco">
+                                    <img src="./SRC/assets/img/Rectangle 315azul.svg" alt="traço azul">
+                                </div>
+                                <img src="./SRC/assets/img/bolaazul.png" alt="icone sessão">
+                                <img src="./SRC/assets/img/pinwhite.svg" alt="icone sessão">
+                            </div>
+                        </div>
+                        <div class="titulo1">
+                            <p class="text11">Fato Relevante</p>
+                            <span class="spn3">...</span>
+                        </div>
+                        <span class="data">28 de abril de 2023</span>
+                        <div class="caixadetexto">
+                            <p class="text12">Não compareceu.</p>
+                        </div>
+                        <div class="vermais">
+                            <p class="text13">Ver mais</p>
+                        </div>
+                    </div>
+                    <div class="cardSection2">
+                        <div class="img">
+                            <div class="traco">
+                                <img src="./SRC/assets/img/Rectangle 323verde.svg" alt="traço azul">
+                            </div>
+                            <img src="./SRC/assets/img/Ellipse 239.svg" alt="icone sessão">
+                            <img src="./SRC/assets/img/Vector.svg" alt="icone sessão">
+                        </div>
+                        <div class="titulo1">
+                            <p class="text11">Sessão 01</p>
+                            <span class="spn3">...</span>
+                        </div>
+                        <span class="data">12 de abril de 2023</span>
+                        <div class="caixadetexto">
+                            <p class="text12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis eius
+                                praesentium laboriosam dolorum, minus cumque. Praesentium distinctio est, voluptatem
+                                aperiam sed harum non autem fuga qui aut, officia quaerat unde.</p>
+                        </div>
+                        <div class="vermais">
+                            <p class="text13">Ver mais</p>
+                        </div>
+                    </div>
+                    <div class="voltaraotopo">
+                        <div class="setas">
+                            <a href="#userName"> <i class="fa-solid fa-angles-up"></i></a>
+                        </div>
+                        <a href="#userName"><span class="spn4">Voltar para o topo</span></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
         <section class="contentTable" id="contentTable">
             <div class="textPaciente">
                 <p class="text4">Meus pacientes</p>
@@ -150,7 +424,7 @@
             <div class="paceiteTitulo">
                 <div class="space">
                     <p class="paceiteTitulotext">Novo Paciente</p>
-                    <i  class="fa-sharp fa-solid fa-pen-line" id="editar"><img src="./SRC/assets/img/pen_line.svg"
+                    <i class="fa-sharp fa-solid fa-pen-line" id="editar"><img src="./SRC/assets/img/pen_line.svg"
                             alt=""></i>
                 </div>
                 <div class="modalerror">

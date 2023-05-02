@@ -43,6 +43,8 @@ const sair = document.querySelector("#sair");
 const body = document.querySelector('.main-conteiner');
 const cabecalho = document.querySelector('.contentHeader');
 const centro = document.querySelector('.contentTable');
+const modalProntuario = document.querySelector('.prontuario');
+const voltarPacientes = document.querySelector('.text55');
 
 sairPopup.addEventListener("click", e => {
     modalSair.style.display = 'flex';
@@ -536,6 +538,12 @@ function deletarPacient() {
     document.querySelector('#text6').innerText = 'Essa ação é irreversivel';
     document.querySelector('#text7').innerText = 'Tem certeza que deseja continuar';
 };
+function abrirProntuario(){
+    modalProntuario.style.display = 'flex';
+    modalPaciente.style.display = 'none';
+    centro.style.display = 'none';
+    voltarPacientes.style.display = 'block';
+}
 const pacientesPorPagina = 6;
 let paginaAtual = 1;
 function exibirPacientes(pacientes) {
@@ -552,7 +560,7 @@ function exibirPacientes(pacientes) {
         <td id="nomeUser1">${paciente.nome}</td>
         <td id="cpfUser">${paciente.cpf}</td>
         <td id="iconn">
-        <i  class="fa-sharp fa-solid fa-clipboard-list allclip" id="clipboard"></i>
+        <i onclick="abrirProntuario()" class="fa-sharp fa-solid fa-clipboard-list allclip" id="clipboard"></i>
         <i onclick="viwerPaciente()" class="fa-sharp fa-solid fa-pen-line umpen" id="penLine"><img
                 src="./SRC/assets/img/pen_line.svg" alt=""></i>
         <i onclick="deletarPacient()" class="fa-solid fa-trash-can" id="trash"></i>
@@ -682,3 +690,44 @@ function handleSearchInput(event) {
     }, 500);
 }
 searchInput.addEventListener('input', handleSearchInput);
+
+const newSection = document.querySelector('.sectionHead')
+const cancelModal = document.querySelector('#fecharModal');
+const closeModalCreate = document.querySelector('.closeCreate');
+const btnCriarSection = document.querySelector('.btnCreateSection');
+const modalSection = document.querySelector('.modalSection');
+const voltarAoTopo = document.querySelector('.voltaraotopo');
+const openSection = document.querySelector('.sectionHead');
+const factorRel = document.querySelector('.fatoRel');
+const filterAll = document.querySelector('.filtrar');
+const cardSection = document.querySelector('.cardSection');
+const cardSection2 = document.querySelector('.cardSection2');
+const cardFactor = document.querySelector('.cardfatos');
+
+voltarPacientes.addEventListener('click', function(){
+        centro.style.display = 'flex';
+        modalProntuario.style.display = 'none';
+        voltarPacientes.style.display = 'none';
+        cardSection.style.display = 'none';
+    cardFactor.style.display = 'none';
+    cardSection2.style.display = 'none';
+    filterAll.style.display = 'none';
+    voltarAoTopo.style.display = 'none';
+});
+newSection.addEventListener('click', function(){
+    modalSection.style.display = 'block';
+});
+cancelModal.addEventListener('click', function(){
+    modalSection.style.display ='none';
+});
+closeModalCreate.addEventListener('click', function(){
+    modalSection.style.display ='none';
+});
+btnCriarSection.addEventListener('click', function(){
+    modalSection.style.display ='none';
+    cardSection.style.display = 'flex';
+    cardFactor.style.display = 'flex';
+    cardSection2.style.display = 'flex';
+    filterAll.style.display = 'flex';
+    voltarAoTopo.style.display = 'flex';
+});
