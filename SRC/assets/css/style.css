@@ -238,7 +238,7 @@ body {
 
 }
 
-.paragraph {
+.paragraphy {
     position: absolute;
     top: 24.4%;
     display: flex;
@@ -251,8 +251,8 @@ body {
 
 }
 
-.text1 {
-    font-family: Montserrat;
+.text1 p {
+    font-family: Montserrat,sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 26px;
@@ -663,12 +663,13 @@ body {
 }
 
 .pacientes {
+    
     margin-left: 18px;
     width: 20.5%;
     background-color: #E0E0E0;
     position: absolute;
     padding-left: 10px;
-    z-index: 1;
+    z-index: 99999;
     opacity: 80%;
     display: none;
     border-bottom-left-radius: 8px;

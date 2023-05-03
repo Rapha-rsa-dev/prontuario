@@ -26,11 +26,5 @@
       "idMedico": "raphael",
       "id": 1
     }
-  ],
-  "medicos": [
-    {
-      "nome":"Raphael Santos Araujo",
-      "id":1
-    }
   ]
 }

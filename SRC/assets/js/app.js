@@ -637,7 +637,7 @@ btnDelete.addEventListener('click', async () => {
 });
 carregarDados();
 // to aqui
-const searchInput = document.querySelector('.search');
+const searchInput = document.querySelector('.search2');
 const pacientesDiv = document.querySelector('.pacientes');
 let timeoutId = null;
 let acharPaciente = '';
@@ -655,7 +655,7 @@ function renderizarPacientes(pacientes) {
             pacientesDiv.style.display = 'block';
 
             //     divPaciente.addEventListener('click', () => {
-            //criar caminho para pagina obs anda nao criei
+            //criar caminho para pagina obs ainda nao criei
             //         window.location.href = `https://seudominio.com/prontuario/${paciente.id}`;
             //       });
         }
