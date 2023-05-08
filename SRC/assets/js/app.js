@@ -454,6 +454,7 @@ enviarForm.addEventListener('DOMContentLoaded', function () {
         
         divEdit.innerHTML = '<p onclick="closeModal()" class="cancel">Cancelar</p><button onclick="editarPac()" type="submit" id="saveEdit">Salvar alterações</button>' 
           
+
         inputs.forEach(inputs => {
             inputs.disabled = false;
             inputs.style.backgroundColor = '#FFFFFF';
@@ -485,7 +486,7 @@ enviarForm.addEventListener('DOMContentLoaded', function () {
             mae: maeInput.value,
             pai: paiInput.value
           }
-
+          const fecharModaClose = document.querySelector('.modedit')
         async function editarPac() {
             
                try {
@@ -520,14 +521,14 @@ enviarForm.addEventListener('DOMContentLoaded', function () {
                 const data = await response.json();
                 closeModal();
                 console.log(data);
-                alert('Dados do paciente atualizados com sucesso');
+                
                 document.location.reload()
               } catch (error) {
                 console.error(error);
                 alert(error.message);
               }
-            
-
+              fecharModaClose.style.display = 'none';
+              modConfirm.style.display = 'none';
         }
       
 
@@ -768,6 +769,7 @@ closeModalCreate.addEventListener('click', function(){
     modalSection.style.display ='none';
     modalCriarSection.style.display = 'none';
     modalFato.style.display ='none';
+
 });
 fecharSection.addEventListener('click', function(){
     modalSection.style.display ='none';
